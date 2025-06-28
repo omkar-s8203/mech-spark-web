@@ -12,8 +12,8 @@ const Hero = () => {
         }} />
       </div>
 
-      {/* Mechanical Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Mechanical Background Elements - Hidden on mobile for cleaner look */}
+      <div className="absolute inset-0 pointer-events-none hidden md:block">
         {/* Animated Gears */}
         <div className="absolute top-20 left-20 w-16 h-16 opacity-20">
           <svg className="w-full h-full text-orange-400 animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 24 24" fill="currentColor">
@@ -53,13 +53,24 @@ const Hero = () => {
         <div className="absolute bottom-1/3 right-10 w-24 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-25 animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-4 h-4 bg-orange-500 rounded-full opacity-60 animate-pulse"></div>
-      <div className="absolute top-40 right-20 w-6 h-6 bg-yellow-500 rounded-full opacity-40 animate-pulse delay-1000"></div>
-      <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-orange-400 rounded-full opacity-50 animate-pulse delay-500"></div>
+      {/* Mobile floating elements - simplified */}
+      <div className="absolute inset-0 pointer-events-none md:hidden">
+        <div className="absolute top-20 right-10 w-3 h-3 bg-orange-500 rounded-full opacity-60 animate-pulse"></div>
+        <div className="absolute bottom-40 left-10 w-4 h-4 bg-yellow-500 rounded-full opacity-40 animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 right-20 w-2 h-2 bg-orange-400 rounded-full opacity-50 animate-pulse delay-500"></div>
+      </div>
+
+      {/* Desktop floating elements */}
+      <div className="absolute inset-0 pointer-events-none hidden md:block">
+        <div className="absolute top-20 left-10 w-4 h-4 bg-orange-500 rounded-full opacity-60 animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-6 h-6 bg-yellow-500 rounded-full opacity-40 animate-pulse delay-1000"></div>
+        <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-orange-400 rounded-full opacity-50 animate-pulse delay-500"></div>
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
@@ -129,6 +140,80 @@ const Hero = () => {
             </div>
           </div>
         </div>
+
+        {/* Mobile Layout */}
+        <div className="lg:hidden text-center">
+          <div className="animate-fade-in">
+            {/* Mobile Hero Icon */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-orange-500/20 to-yellow-500/20 rounded-full w-32 h-32 mx-auto flex items-center justify-center animate-pulse mb-6" style={{ animationDuration: '4s' }}>
+                <svg className="w-16 h-16 text-white animate-pulse" fill="currentColor" viewBox="0 0 24 24" style={{ animationDuration: '3s' }}>
+                  <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 10 5.16-.26 9-4.45 9-10V7l-10-5z"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none"/>
+                </svg>
+              </div>
+              
+              {/* Mobile Skills Tags */}
+              <div className="flex flex-wrap justify-center gap-2 mb-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 py-1 text-orange-400 text-sm font-medium">
+                  CAD Design
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 py-1 text-yellow-400 text-sm font-medium">
+                  3D Printing
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 py-1 text-orange-300 text-sm font-medium">
+                  R&D
+                </div>
+              </div>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">
+              Ready to Bring{' '}
+              <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                Bigger, Better
+              </span>{' '}
+              & Stronger Technology
+            </h1>
+            
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              A leading company focused on accelerating technology and growing exponentially. 
+              Innovate. Design. Build. Lead the Future.
+            </p>
+            
+            <div className="flex flex-col gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3 w-full max-w-xs mx-auto transform hover:scale-105 transition-all duration-200"
+              >
+                Get Started
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-3 w-full max-w-xs mx-auto transform hover:scale-105 transition-all duration-200"
+              >
+                Learn More
+              </Button>
+            </div>
+
+            {/* Mobile Stats */}
+            <div className="grid grid-cols-3 gap-4 mt-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-2xl font-bold text-orange-400">500+</div>
+                <div className="text-gray-300 text-sm">Projects</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-2xl font-bold text-yellow-400">50+</div>
+                <div className="text-gray-300 text-sm">Clients</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-2xl font-bold text-orange-300">5+</div>
+                <div className="text-gray-300 text-sm">Years</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
