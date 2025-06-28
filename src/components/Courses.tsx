@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Book, Users, Settings, Code } from 'lucide-react';
 
 const Courses = () => {
@@ -40,7 +41,8 @@ const Courses = () => {
       duration: "12 Weeks",
       level: "Beginner",
       students: "2,400+",
-      image: "bg-gradient-to-br from-blue-600 to-purple-600"
+      image: "bg-gradient-to-br from-blue-600 to-purple-600",
+      price: "$299"
     },
     {
       title: "Automotive Design Mastery",
@@ -48,7 +50,44 @@ const Courses = () => {
       duration: "16 Weeks",
       level: "Advanced",
       students: "1,800+",
-      image: "bg-gradient-to-br from-red-500 to-pink-600"
+      image: "bg-gradient-to-br from-red-500 to-pink-600",
+      price: "$499"
+    },
+    {
+      title: "SolidWorks Professional",
+      description: "Complete SolidWorks training from basics to advanced modeling, simulation, and design validation.",
+      duration: "10 Weeks",
+      level: "Intermediate",
+      students: "3,200+",
+      image: "bg-gradient-to-br from-green-500 to-teal-600",
+      price: "$399"
+    },
+    {
+      title: "CATIA V5/V6 Mastery",
+      description: "Comprehensive CATIA training for aerospace and automotive industries with real-world projects.",
+      duration: "14 Weeks",
+      level: "Advanced",
+      students: "1,500+",
+      image: "bg-gradient-to-br from-orange-500 to-red-600",
+      price: "$599"
+    },
+    {
+      title: "3D Printing & Prototyping",
+      description: "Learn rapid prototyping techniques, 3D modeling for printing, and advanced manufacturing methods.",
+      duration: "8 Weeks",
+      level: "Beginner",
+      students: "2,100+",
+      image: "bg-gradient-to-br from-purple-500 to-indigo-600",
+      price: "$249"
+    },
+    {
+      title: "CNC Programming Excellence",
+      description: "Master CNC programming, toolpath optimization, and advanced machining techniques for precision manufacturing.",
+      duration: "12 Weeks",
+      level: "Intermediate",
+      students: "1,900+",
+      image: "bg-gradient-to-br from-yellow-500 to-orange-600",
+      price: "$449"
     }
   ];
 
@@ -93,52 +132,79 @@ const Courses = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600 text-base leading-relaxed">
+                <CardDescription className="text-gray-600 text-base leading-relaxed mb-6">
                   {category.description}
                 </CardDescription>
+                <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
+                  Learn More
+                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Popular Courses */}
+        {/* Popular Courses Carousel */}
         <div className="mb-20">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Most Popular Courses</h3>
             <p className="text-lg text-gray-600">
-              Accelerate Your Career with Our Top Automotive Design Courses
+              Accelerate Your Career with Our Top Engineering Design Courses
             </p>
             <p className="text-base text-gray-500 mt-2">
-              We offer two highly sought-after courses designed to help you become a skilled and industry-ready automotive design engineer:
+              We offer comprehensive courses designed to help you become a skilled and industry-ready engineering professional:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {popularCourses.map((course, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-0">
-                <div className={`h-48 ${course.image} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/20"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <Badge className="bg-white/20 text-white border-white/30 mb-2">
-                      {course.level}
-                    </Badge>
-                    <h4 className="text-2xl font-bold text-white mb-2">{course.title}</h4>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <p className="text-gray-600 mb-4 leading-relaxed">{course.description}</p>
-                  <div className="flex justify-between items-center mb-6">
-                    <div className="flex space-x-4 text-sm text-gray-500">
-                      <span>⏱️ {course.duration}</span>
-                      <span>👥 {course.students} students</span>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {popularCourses.map((course, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-0 h-full">
+                    <div className={`h-48 ${course.image} relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-black/20"></div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="flex justify-between items-center mb-2">
+                          <Badge className="bg-white/20 text-white border-white/30">
+                            {course.level}
+                          </Badge>
+                          <span className="text-white font-bold text-lg">{course.price}</span>
+                        </div>
+                        <h4 className="text-xl font-bold text-white">{course.title}</h4>
+                      </div>
                     </div>
-                  </div>
-                  <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
-                    See more products
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                    <CardContent className="p-6 flex flex-col flex-grow">
+                      <p className="text-gray-600 mb-4 leading-relaxed flex-grow">{course.description}</p>
+                      <div className="flex justify-between items-center mb-6 text-sm text-gray-500">
+                        <span>⏱️ {course.duration}</span>
+                        <span>👥 {course.students} students</span>
+                      </div>
+                      <div className="flex gap-2">
+                        <Button className="flex-1 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
+                          Enroll Now
+                        </Button>
+                        <Button variant="outline" className="flex-1">
+                          Learn More
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-6" />
+            <CarouselNext className="hidden md:flex -right-6" />
+          </Carousel>
+
+          {/* Mobile Navigation Arrows */}
+          <div className="flex justify-center gap-4 mt-6 md:hidden">
+            <CarouselPrevious className="relative inset-auto translate-x-0 translate-y-0" />
+            <CarouselNext className="relative inset-auto translate-x-0 translate-y-0" />
           </div>
         </div>
 
