@@ -197,15 +197,9 @@ const Courses = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-6" />
-            <CarouselNext className="hidden md:flex -right-6" />
+            <CarouselPrevious />
+            <CarouselNext />
           </Carousel>
-
-          {/* Mobile Navigation Arrows */}
-          <div className="flex justify-center gap-4 mt-6 md:hidden">
-            <CarouselPrevious className="relative inset-auto translate-x-0 translate-y-0" />
-            <CarouselNext className="relative inset-auto translate-x-0 translate-y-0" />
-          </div>
         </div>
 
         {/* Skills Section */}
