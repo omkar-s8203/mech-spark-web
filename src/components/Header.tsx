@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -12,36 +11,40 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <div className="flex items-center">
-                <div className="bg-gradient-to-r from-orange-500 to-yellow-500 p-2 rounded-lg mr-3">
-                  <span className="text-white font-bold text-xl">D</span>
-                </div>
-                <div>
-                  <h1 className="text-xl font-bold text-gray-900">Decouvertes</h1>
-                  <p className="text-xs text-gray-600">Accelerating the Technologies</p>
-                </div>
+            <a href="/" className="flex items-center space-x-3">
+              <img src="/logo.png" alt="Website Logo" className="w-10 h-10" />
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">Decouvertes</h1>
+                <p className="text-xs text-gray-600">Accelerating the Technologies</p>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#home" className="text-gray-900 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors">
+              <a href="/#home" className="text-gray-900 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors">
                 Home
               </a>
-              <a href="#services" className="text-gray-600 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors">
+              <a href="/#services" className="text-gray-600 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors">
                 Services
               </a>
-              <a href="#courses" className="text-gray-600 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors">
+              <a href="/#courses" className="text-gray-600 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors">
                 Courses
               </a>
-              <a href="#about" className="text-gray-600 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors">
+              <a href="/#about" className="text-gray-600 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors">
                 About
               </a>
-              <a href="#contact" className="text-gray-600 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfCsCqX8pQRcX3VktXY7-jZSU9IvQmyAnvvyEOPA4VzLf1Igg/viewform?usp=dialog"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors"
+              >
                 Contact
+              </a>
+              <a href="/blog" className="text-gray-600 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors">
+                Blog
               </a>
             </div>
           </nav>
@@ -71,20 +74,28 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <a href="#home" className="text-gray-900 hover:text-orange-500 block px-3 py-2 text-base font-medium">
+              <a href="/#home" className="text-gray-900 hover:text-orange-500 block px-3 py-2 text-base font-medium">
                 Home
               </a>
-              <a href="#services" className="text-gray-600 hover:text-orange-500 block px-3 py-2 text-base font-medium">
+              <a href="/#services" className="text-gray-600 hover:text-orange-500 block px-3 py-2 text-base font-medium">
                 Services
               </a>
-              <a href="#courses" className="text-gray-600 hover:text-orange-500 block px-3 py-2 text-base font-medium">
+              <a href="/#courses" className="text-gray-600 hover:text-orange-500 block px-3 py-2 text-base font-medium">
                 Courses
               </a>
-              <a href="#about" className="text-gray-600 hover:text-orange-500 block px-3 py-2 text-base font-medium">
+              <a href="/#about" className="text-gray-600 hover:text-orange-500 block px-3 py-2 text-base font-medium">
                 About
               </a>
-              <a href="#contact" className="text-gray-600 hover:text-orange-500 block px-3 py-2 text-base font-medium">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfCsCqX8pQRcX3VktXY7-jZSU9IvQmyAnvvyEOPA4VzLf1Igg/viewform?usp=dialog"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-orange-500 block px-3 py-2 text-base font-medium"
+              >
                 Contact
+              </a>
+              <a href="/blog" className="text-gray-600 hover:text-orange-500 block px-3 py-2 text-base font-medium">
+                Blog
               </a>
               <div className="flex flex-col space-y-2 px-3 py-4">
                 <Button variant="outline" className="w-full hover:bg-orange-50 hover:border-orange-500">
