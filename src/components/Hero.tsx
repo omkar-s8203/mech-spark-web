@@ -94,7 +94,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-3 transform hover:scale-105 transition-all duration-200"
+                className="border-black bg-black text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-3 transform hover:scale-105 transition-all duration-200"
               >
                 Learn More
               </Button>
@@ -190,7 +190,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-3 w-full max-w-xs mx-auto transform hover:scale-105 transition-all duration-200"
+                className="border-black bg-black text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-3 w-full max-w-xs mx-auto transform hover:scale-105 transition-all duration-200"
               >
                 Learn More
               </Button>

@@ -10,17 +10,17 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
+  visible: (i = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
       delay: i * 0.1,
       duration: 0.6,
-      ease: [0.4, 0, 0.2, 1], // cubic-bezier for "easeOut"
+      ease: [0.4, 0, 0.2, 1],
     },
   }),
 };
@@ -36,8 +36,7 @@ const Blog = () => {
       date: '2024-06-15',
       readTime: '5 min read',
       category: 'Technology',
-      image:
-        'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80',
       featured: true,
     },
     {
@@ -49,56 +48,47 @@ const Blog = () => {
       date: '2024-06-10',
       readTime: '7 min read',
       category: 'Manufacturing',
-      image:
-        'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80',
     },
     {
       id: 3,
       title: 'SolidWorks vs CATIA: Which is Right for You?',
-      excerpt:
-        'A comprehensive comparison of two leading CAD platforms to help you choose the right tool.',
+      excerpt: 'A comprehensive comparison of two leading CAD platforms to help you choose the right tool.',
       author: 'Emily Chen',
       date: '2024-06-05',
       readTime: '6 min read',
       category: 'Software',
-      image:
-        'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
     },
     {
       id: 4,
       title: 'Career Paths in Mechanical Engineering Design',
-      excerpt:
-        'Explore various career opportunities and growth paths in mechanical engineering design field.',
+      excerpt: 'Explore various career opportunities and growth paths in mechanical engineering design field.',
       author: 'Robert Davis',
       date: '2024-05-28',
       readTime: '8 min read',
       category: 'Careers',
-      image:
-        'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80',
     },
     {
       id: 5,
       title: 'Industry 4.0 and Smart Manufacturing',
-      excerpt:
-        'Understanding how digital transformation is reshaping manufacturing processes and engineering workflows.',
+      excerpt: 'Understanding how digital transformation is reshaping manufacturing processes and engineering workflows.',
       author: 'Lisa Park',
       date: '2024-05-20',
       readTime: '9 min read',
       category: 'Industry',
-      image:
-        'https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=800&q=80',
     },
     {
       id: 6,
       title: 'Best Practices for CAD Model Organization',
-      excerpt:
-        'Learn professional techniques for organizing and managing complex CAD assemblies and projects.',
+      excerpt: 'Learn professional techniques for organizing and managing complex CAD assemblies and projects.',
       author: 'David Wilson',
       date: '2024-05-15',
       readTime: '4 min read',
       category: 'Best Practices',
-      image:
-        'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80',
     },
   ];
 

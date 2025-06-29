@@ -128,20 +128,7 @@ const Courses = () => {
 
   return (
     <section id="courses" className="py-20 bg-white relative">
-      {/* Social Media Buttons */}
-      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3">
-        {socialMediaLinks.map((social, index) => (
-          <a
-            key={index}
-            href={social.href}
-            className={`w-12 h-12 rounded-full ${social.bgColor} text-white flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 animate-float`}
-            style={{ animationDelay: `${index * 0.2}s` }}
-            title={social.label}
-          >
-            {social.icon}
-          </a>
-        ))}
-      </div>
+      
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -268,7 +255,7 @@ const Courses = () => {
             </p>
           </div>
 
-          <Carousel
+          {/* <Carousel
             opts={{
               align: "start",
               loop: true,
@@ -317,7 +304,70 @@ const Courses = () => {
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
-          </Carousel>
+          </Carousel> */}
+
+          <Carousel
+  opts={{
+    align: "start",
+    loop: true,
+  }}
+  className="w-full"
+>
+  <CarouselContent className="-ml-2 md:-ml-4">
+    {popularCourses.map((course, index) => (
+      <CarouselItem
+        key={index}
+        className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+      >
+        <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 h-full group hover:scale-105">
+          <div className="h-48 relative overflow-hidden">
+            <img 
+              src={course.image} 
+              alt={course.title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300"></div>
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="flex justify-between items-center mb-2">
+                <Badge className="bg-white/20 text-white border-white/30 animate-float">
+                  {course.level}
+                </Badge>
+                <span className="text-white font-bold text-lg animate-fade-in">
+                  {course.price}
+                </span>
+              </div>
+              <h4 className="text-xl font-bold text-white">{course.title}</h4>
+            </div>
+          </div>
+          <CardContent className="p-6 flex flex-col flex-grow">
+            <p className="text-gray-600 mb-4 leading-relaxed flex-grow">
+              {course.description}
+            </p>
+            <div className="flex justify-between items-center mb-6 text-sm text-gray-500">
+              <span>⏱️ {course.duration}</span>
+              <span>👥 {course.students} students</span>
+            </div>
+            <div className="flex gap-2">
+              <Button className="flex-1 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 hover:scale-105 transition-transform duration-200">
+                Enroll Now
+              </Button>
+              <Button variant="outline" className="flex-1 hover:scale-105 transition-transform duration-200">
+                Learn More
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </CarouselItem>
+    ))}
+  </CarouselContent>
+
+  {/* 👇 Hide navigation on small screens */}
+  <div className="hidden md:block">
+    <CarouselPrevious />
+    <CarouselNext />
+  </div>
+</Carousel>
+
         </div>
 
         {/* Skills Section */}
@@ -343,6 +393,42 @@ const Courses = () => {
           </div>
         </div>
       </div>
+
+      {/* Social Media Buttons
+      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3">
+        {socialMediaLinks.map((social, index) => (
+          <a
+            key={index}
+            href={social.href}
+            className={`w-12 h-12 rounded-full ${social.bgColor} text-white flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 animate-float`}
+            style={{ animationDelay: `${index * 0.2}s` }}
+            title={social.label}
+          >
+            {social.icon}
+          </a>
+        ))}
+      </div> */}
+
+ {/* Social Media Buttons at Bottom */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a href="#" className="w-12 h-12 rounded-full bg-red-600 hover:bg-red-700 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300" title="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 9.75l5.25 3-5.25 3v-6z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 12c0 3.866-3.582 7-8 7s-8-3.134-8-7 3.582-7 8-7 8 3.134 8 7z" />
+          </svg>
+        </a>
+        <a href="#" className="w-12 h-12 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="h-5 w-5">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.058-1.864-3.058-1.864 0-2.15 1.454-2.15 2.957v5.705h-3v-10h2.884v1.367h.041c.402-.762 1.384-1.565 2.85-1.565 3.048 0 3.609 2.008 3.609 4.621v5.577z"/>
+          </svg>
+        </a>
+        <a href="#" className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300" title="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="h-5 w-5">
+            <path d="M20.52 3.48A11.9 11.9 0 0012.07 0C5.41 0 .02 5.39.02 12.05c0 2.12.55 4.17 1.6 5.99L0 24l6.13-1.6c1.72 1 3.67 1.54 5.72 1.54h.01c6.66 0 12.05-5.39 12.05-12.05a11.96 11.96 0 00-3.39-8.46zm-8.46 18.52c-1.73 0-3.42-.47-4.9-1.35l-.35-.21-3.64.95.97-3.54-.23-.36a9.53 9.53 0 01-1.48-5.15c0-5.28 4.3-9.58 9.58-9.58a9.5 9.5 0 019.58 9.58c0 5.28-4.3 9.58-9.58 9.58zm5.18-7.31c-.28-.14-1.66-.82-1.91-.91-.26-.1-.45-.14-.63.14-.19.28-.73.91-.9 1.1-.17.19-.34.21-.62.07-.28-.14-1.19-.44-2.26-1.4-.83-.74-1.39-1.64-1.55-1.92-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.52-.86-2.08-.23-.55-.47-.48-.63-.49h-.54c-.17 0-.45.07-.68.34s-.89.86-.89 2.09.91 2.43 1.04 2.6c.14.17 1.78 2.72 4.3 3.82.6.26 1.06.42 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.66-.68 1.9-1.34.24-.66.24-1.23.17-1.34-.07-.11-.26-.17-.54-.3z"/>
+          </svg>
+        </a>
+      </div>
+
     </section>
   );
 };
