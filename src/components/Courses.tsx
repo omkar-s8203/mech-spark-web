@@ -192,7 +192,8 @@ const Courses = () => {
             <div className="grid lg:grid-cols-2 gap-0">
               <div className="relative h-96 lg:h-auto overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  // src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/3dprinter.png"
                   alt="Professional 3D Printer"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -230,14 +231,41 @@ const Courses = () => {
                   </div>
                 </div>
                 
-                <div className="flex gap-3">
+                {/* <div className="flex gap-3">
                   <Button className="flex-1 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 group-hover:scale-105 transition-transform duration-200">
                     Get Quote
                   </Button>
                   <Button variant="outline" className="flex-1 hover:scale-105 transition-transform duration-200">
                     Learn More
                   </Button>
-                </div>
+                </div> */}
+
+                <div className="flex gap-3">
+  {/* Get Quote Button */}
+  <a 
+    href="/brs250_get_quote.pdf" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="flex-1"
+  >
+    <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 group-hover:scale-105 transition-transform duration-200">
+      Get Quote
+    </Button>
+  </a>
+
+  {/* Learn More Button */}
+  <a 
+    href="/brs250_learn_more.pdf" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="flex-1"
+  >
+    <Button variant="outline" className="w-full hover:scale-105 transition-transform duration-200">
+      Learn More
+    </Button>
+  </a>
+</div>
+
               </CardContent>
             </div>
           </Card>
