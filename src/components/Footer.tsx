@@ -58,9 +58,17 @@ const Footer = () => {
               {/* Company Info */}
               <div className="lg:col-span-1">
                 <div className="flex items-center mb-6">
-                  <div className="bg-gradient-to-r from-orange-500 to-yellow-500 p-2 rounded-lg mr-3">
+                  {/* <div className="bg-gradient-to-r from-orange-500 to-yellow-500 p-2 rounded-lg mr-3">
                     <span className="text-white font-bold text-xl">D</span>
+                  </div> */}
+                  <div className="mr-3">
+                    <img
+                      src="/logo.png"
+                      alt="Decouvertes Logo"
+                      className="w-12 h-12 object-contain rounded-lg"
+                    />
                   </div>
+
                   <div>
                     <h3 className="text-xl font-bold text-white">Decouvertes</h3>
                     <p className="text-sm text-gray-400">Accelerating the Technologies</p>
@@ -141,7 +149,7 @@ const Footer = () => {
                   <div className="inline-block bg-white p-4 rounded-lg">
                     <img
                       // src="/assets/images/qr.png"
-                       src="/qr.png"
+                      src="/qr.png"
                       alt="Webinar QR Code"
                       className="w-32 h-32 object-cover rounded"
                     />
