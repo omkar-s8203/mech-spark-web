@@ -1,12 +1,14 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Book, Users, Settings, Code, Youtube, Linkedin, MessageCircle } from 'lucide-react';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Book, Users, Settings, Code, Youtube, Linkedin, MessageCircle, CheckCircle, Star } from 'lucide-react';
 
 const Courses = () => {
+  const [openDialog, setOpenDialog] = useState<number | null>(null);
+
   const courseCategories = [
     {
       icon: <Book className="h-12 w-12" />,
@@ -15,7 +17,26 @@ const Courses = () => {
       description: "Hands-on training for tools like SolidWorks and CATIA. Programs for all expertise levels with real-world projects.",
       color: "bg-yellow-500",
       textColor: "text-yellow-600",
-      bgImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      detailedInfo: {
+        overview: "Our comprehensive CAD, CAM, & CAE software training programs are designed to equip students and professionals with industry-standard skills in mechanical design and engineering.",
+        features: [
+          "Hands-on training with SolidWorks, CATIA, AutoCAD, and Fusion 360",
+          "Real-world project-based learning approach",
+          "Industry-certified instructors with 10+ years experience",
+          "Flexible scheduling with weekend and evening batches",
+          "Job placement assistance and career guidance",
+          "Access to latest software versions and tools"
+        ],
+        benefits: [
+          "Industry-ready certification upon completion",
+          "Portfolio development with actual projects",
+          "Networking opportunities with industry professionals",
+          "Continuous support even after course completion"
+        ],
+        duration: "3-6 months depending on specialization",
+        investment: "Starting from ₹15,000 - ₹45,000"
+      }
     },
     {
       icon: <Settings className="h-12 w-12" />,
@@ -24,7 +45,26 @@ const Courses = () => {
       description: "Support from concept to prototype with customized solutions. Guidance on materials and manufacturing processes.",
       color: "bg-gray-800",
       textColor: "text-gray-700",
-      bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      detailedInfo: {
+        overview: "Our Solutions are assured for industries - Best A Grade Commercial Services. We provide end-to-end product design and development services for businesses looking to bring innovative products to market.",
+        features: [
+          "Complete product lifecycle management from concept to market",
+          "Advanced 3D modeling and simulation services",
+          "Material selection and manufacturing process optimization",
+          "Prototyping and testing validation",
+          "Cost analysis and design for manufacturing (DFM)",
+          "Quality assurance and compliance certification"
+        ],
+        benefits: [
+          "Reduced time-to-market with efficient design processes",
+          "Cost-effective solutions with optimized manufacturing",
+          "Risk mitigation through thorough testing and validation",
+          "Scalable designs for mass production"
+        ],
+        duration: "2-8 months based on project complexity",
+        investment: "Custom pricing based on project scope and requirements"
+      }
     },
     {
       icon: <Code className="h-12 w-12" />,
@@ -33,7 +73,26 @@ const Courses = () => {
       description: "3D printing services with high-quality output. Prototype testing and support for design optimization.",
       color: "bg-yellow-500",
       textColor: "text-yellow-600",
-      bgImage: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      detailedInfo: {
+        overview: "State-of-the-art 3D printing and rapid prototyping services using professional-grade equipment to bring your designs to life with precision and quality.",
+        features: [
+          "High-precision 3D printing with multiple material options",
+          "PLA, ABS, PETG, and specialty filament printing",
+          "Layer resolution from 0.1mm to 0.3mm",
+          "Large build volume up to 250x250x250mm",
+          "Post-processing services including sanding and painting",
+          "Design optimization for 3D printing"
+        ],
+        benefits: [
+          "Fast turnaround time for prototypes",
+          "Cost-effective solution for small batch production",
+          "High-quality surface finish and dimensional accuracy",
+          "Support for complex geometries and overhangs"
+        ],
+        duration: "1-5 days depending on complexity and quantity",
+        investment: "Starting from ₹50 per hour of print time"
+      }
     }
   ];
 
@@ -172,9 +231,80 @@ const Courses = () => {
                 <CardDescription className="text-gray-600 text-base leading-relaxed mb-6">
                   {category.description}
                 </CardDescription>
-                <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 hover:scale-105 transition-transform duration-200">
-                  Learn More
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 hover:scale-105 transition-transform duration-200">
+                      Learn More
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                        {category.icon}
+                        {category.subtitle}
+                      </DialogTitle>
+                      <DialogDescription className="text-lg text-gray-600 mt-2">
+                        {category.detailedInfo.overview}
+                      </DialogDescription>
+                    </DialogHeader>
+                    
+                    <div className="grid md:grid-cols-2 gap-6 mt-6">
+                      {/* Features Section */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                          <Settings className="h-5 w-5" />
+                          Key Features
+                        </h4>
+                        <ul className="space-y-2">
+                          {category.detailedInfo.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-gray-600">
+                              <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
+                              <span className="text-sm">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Benefits Section */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                          <Star className="h-5 w-5" />
+                          Benefits
+                        </h4>
+                        <ul className="space-y-2">
+                          {category.detailedInfo.benefits.map((benefit, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-gray-600">
+                              <CheckCircle className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                              <span className="text-sm">{benefit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Additional Info */}
+                    <div className="grid md:grid-cols-2 gap-6 mt-6 p-4 bg-gray-50 rounded-lg">
+                      <div>
+                        <h5 className="font-semibold text-gray-900 mb-1">Duration</h5>
+                        <p className="text-gray-600 text-sm">{category.detailedInfo.duration}</p>
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-gray-900 mb-1">Investment</h5>
+                        <p className="text-gray-600 text-sm">{category.detailedInfo.investment}</p>
+                      </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex gap-3 mt-6">
+                      <Button className="flex-1 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
+                        Get Started
+                      </Button>
+                      <Button variant="outline" className="flex-1">
+                        Contact Us
+                      </Button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </CardContent>
             </Card>
           ))}
