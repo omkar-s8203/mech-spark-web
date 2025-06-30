@@ -1,8 +1,9 @@
-
 import React from 'react';
 import { Card, CardContent, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import DFT350Modal from '@/components/ui/DFT350Modal';
+import PDFQuoteModal from '@/components/ui/PDFQuoteModal';
 
 const ThreeDPrinterSection = () => {
   return (
@@ -26,17 +27,20 @@ const ThreeDPrinterSection = () => {
               Professional Grade
             </Badge>
           </div>
+
           <CardContent className="p-8 flex flex-col justify-center">
             <Badge variant="outline" className="w-fit mb-4">
               3D Printing Equipment
             </Badge>
+
             <CardTitle className="text-3xl font-bold mb-4 group-hover:text-orange-600 transition-colors">
               BRS250 Professional 3D Printer
             </CardTitle>
+
             <CardDescription className="text-lg text-gray-600 mb-6 leading-relaxed">
               High-precision 3D printer capable of producing complex prototypes and production parts with exceptional quality and reliability.
             </CardDescription>
-            
+
             <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
               <div className="bg-gray-50 p-3 rounded-lg">
                 <div className="font-semibold text-gray-900">Build Volume</div>
@@ -55,31 +59,14 @@ const ThreeDPrinterSection = () => {
                 <div className="text-gray-600">USB, SD Card</div>
               </div>
             </div>
-            
-            <div className="flex gap-3">
-              {/* Get Quote Button */}
-              <a 
-                href="/brs250_get_quote.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="flex-1"
-              >
-                <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 group-hover:scale-105 transition-transform duration-200">
-                  Get Quote
-                </Button>
-              </a>
 
-              {/* Learn More Button */}
-              <a 
-                href="/brs250_learn_more.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="flex-1"
-              >
-                <Button variant="outline" className="w-full hover:scale-105 transition-transform duration-200">
-                  Learn More
-                </Button>
-              </a>
+            <div className="flex gap-3">
+              <div className="flex-1">
+                <PDFQuoteModal />
+              </div>
+              <div className="flex-1">
+                <DFT350Modal />
+              </div>
             </div>
           </CardContent>
         </div>
