@@ -1,8 +1,9 @@
 
 import { Book, Users, Settings, Code, Youtube, Linkedin, MessageCircle, CheckCircle, Star, Clock, Award } from 'lucide-react';
+import React from 'react';
 
 export interface CourseCategory {
-  icon: JSX.Element;
+  icon: React.ReactElement;
   title: string;
   subtitle: string;
   description: string;
@@ -35,7 +36,7 @@ export interface PopularCourse {
 }
 
 export interface SocialMediaLink {
-  icon: JSX.Element;
+  icon: React.ReactElement;
   label: string;
   href: string;
   bgColor: string;
@@ -43,7 +44,7 @@ export interface SocialMediaLink {
 
 export const courseCategories: CourseCategory[] = [
   {
-    icon: <Book className="h-12 w-12" />,
+    icon: React.createElement(Book, { className: "h-12 w-12" }),
     title: "TRAINING",
     subtitle: "CAD, CAM, & CAE Software Training",
     description: "Hands-on training for tools like SolidWorks and CATIA. Programs for all expertise levels with real-world projects.",
@@ -71,7 +72,7 @@ export const courseCategories: CourseCategory[] = [
     }
   },
   {
-    icon: <Settings className="h-12 w-12" />,
+    icon: React.createElement(Settings, { className: "h-12 w-12" }),
     title: "PRODUCT",
     subtitle: "Product Design and Development",
     description: "Support from concept to prototype with customized solutions. Guidance on materials and manufacturing processes.",
@@ -99,7 +100,7 @@ export const courseCategories: CourseCategory[] = [
     }
   },
   {
-    icon: <Code className="h-12 w-12" />,
+    icon: React.createElement(Code, { className: "h-12 w-12" }),
     title: "3D PRINT",
     subtitle: "Rapid Prototyping Services",
     description: "3D printing services with high-quality output. Prototype testing and support for design optimization.",
@@ -358,19 +359,19 @@ export const skills = [
 
 export const socialMediaLinks: SocialMediaLink[] = [
   {
-    icon: <Youtube className="h-5 w-5" />,
+    icon: React.createElement(Youtube, { className: "h-5 w-5" }),
     label: "YouTube",
     href: "https://www.youtube.com/@The_Art_of_India",
     bgColor: "bg-red-600 hover:bg-red-700"
   },
   {
-    icon: <Linkedin className="h-5 w-5" />,
+    icon: React.createElement(Linkedin, { className: "h-5 w-5" }),
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/decouvertes-future-tech/",
     bgColor: "bg-blue-600 hover:bg-blue-700"
   },
   {
-    icon: <MessageCircle className="h-5 w-5" />,
+    icon: React.createElement(MessageCircle, { className: "h-5 w-5" }),
     label: "WhatsApp",
     href: "https://wa.me/919561103435",
     bgColor: "bg-green-600 hover:bg-green-700"
