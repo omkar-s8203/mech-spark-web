@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Book, Users, Settings, Code, Youtube, Linkedin, MessageCircle, CheckCircle, Star } from 'lucide-react';
+import { Book, Users, Settings, Code, Youtube, Linkedin, MessageCircle, CheckCircle, Star, Clock, Award } from 'lucide-react';
 
 const Courses = () => {
   const [openDialog, setOpenDialog] = useState<number | null>(null);
@@ -104,7 +104,32 @@ const Courses = () => {
       level: "Beginner",
       students: "2,400+",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      price: "$299"
+      price: "$299",
+      detailedInfo: {
+        overview: "This comprehensive foundation course introduces you to the exciting world of automotive design. You'll learn the fundamental principles, tools, and methodologies used in modern automotive design processes.",
+        features: [
+          "Introduction to automotive design principles and history",
+          "Basic 3D modeling techniques for automotive components",
+          "Understanding of materials and manufacturing processes",
+          "Hands-on projects with real vehicle design challenges",
+          "Industry-standard software training (SolidWorks basics)",
+          "Design sketching and visualization techniques"
+        ],
+        benefits: [
+          "Strong foundation for advanced automotive design courses",
+          "Portfolio development with beginner-friendly projects",
+          "Understanding of automotive industry standards",
+          "Certificate of completion from recognized institution"
+        ],
+        curriculum: [
+          "Week 1-2: Automotive Design History and Principles",
+          "Week 3-4: Introduction to CAD Software",
+          "Week 5-6: Basic 3D Modeling Techniques",
+          "Week 7-8: Materials and Manufacturing Basics",
+          "Week 9-10: Design Project - Simple Component",
+          "Week 11-12: Portfolio Development and Presentation"
+        ]
+      }
     },
     {
       title: "Automotive Design Mastery",
@@ -113,7 +138,33 @@ const Courses = () => {
       level: "Advanced",
       students: "1,800+",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      price: "$499"
+      price: "$499",
+      detailedInfo: {
+        overview: "Take your automotive design skills to the professional level with advanced techniques, complex projects, and industry-relevant methodologies used by leading automotive companies worldwide.",
+        features: [
+          "Advanced surfacing and complex geometry modeling",
+          "Aerodynamics and performance optimization techniques",
+          "Advanced material selection and testing procedures",
+          "Professional project management methodologies",
+          "Industry collaboration and real-world project experience",
+          "Advanced simulation and testing protocols"
+        ],
+        benefits: [
+          "Professional-level portfolio with complex projects",
+          "Industry networking opportunities",
+          "Job placement assistance in automotive companies",
+          "Advanced certification recognized by major OEMs"
+        ],
+        curriculum: [
+          "Week 1-2: Advanced CAD Techniques and Surface Modeling",
+          "Week 3-4: Aerodynamics and Performance Design",
+          "Week 5-6: Advanced Materials and Testing",
+          "Week 7-8: Vehicle Systems Integration",
+          "Week 9-12: Major Design Project - Complete Vehicle Component",
+          "Week 13-14: Professional Presentation and Documentation",
+          "Week 15-16: Industry Collaboration Project"
+        ]
+      }
     },
     {
       title: "SolidWorks Professional",
@@ -122,7 +173,36 @@ const Courses = () => {
       level: "Intermediate",
       students: "3,200+",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      price: "$399"
+      price: "$399",
+      detailedInfo: {
+        overview: "Master SolidWorks from fundamentals to advanced features. This comprehensive course covers all aspects of SolidWorks including part modeling, assembly design, drawing creation, and simulation.",
+        features: [
+          "Complete SolidWorks interface and workflow mastery",
+          "Advanced part modeling and assembly techniques",
+          "Technical drawing and documentation creation",
+          "Simulation and analysis tools (FEA basics)",
+          "Sheet metal and weldment design",
+          "Surface modeling and advanced features"
+        ],
+        benefits: [
+          "SolidWorks Professional Certification preparation",
+          "Industry-ready skills for mechanical design roles",
+          "Comprehensive project portfolio",
+          "Access to SolidWorks community and resources"
+        ],
+        curriculum: [
+          "Week 1: SolidWorks Basics and Interface",
+          "Week 2: Part Modeling Fundamentals",
+          "Week 3: Advanced Part Features",
+          "Week 4: Assembly Design and Constraints",
+          "Week 5: Technical Drawings and Documentation",
+          "Week 6: Sheet Metal and Weldments",
+          "Week 7: Surface Modeling",
+          "Week 8: Simulation and Analysis Basics",
+          "Week 9: Advanced Projects",
+          "Week 10: Certification Preparation"
+        ]
+      }
     },
     {
       title: "CATIA V5/V6 Mastery",
@@ -131,7 +211,34 @@ const Courses = () => {
       level: "Advanced",
       students: "1,500+",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      price: "$599"
+      price: "$599",
+      detailedInfo: {
+        overview: "Master CATIA V5 and V6 for aerospace and automotive applications. This advanced course covers all major workbenches and prepares you for professional roles in leading aerospace and automotive companies.",
+        features: [
+          "Complete CATIA V5/V6 workbench mastery",
+          "Advanced surface modeling and Class-A surfacing",
+          "Complex assembly design and management",
+          "Aerospace and automotive specific workflows",
+          "Advanced simulation and analysis capabilities",
+          "Integration with PLM systems and workflows"
+        ],
+        benefits: [
+          "CATIA certification from Dassault Systèmes",
+          "Aerospace and automotive industry readiness",
+          "Professional project portfolio with complex designs",
+          "Direct placement opportunities with industry partners"
+        ],
+        curriculum: [
+          "Week 1-2: CATIA Fundamentals and Part Design",
+          "Week 3-4: Advanced Part Features and Parametric Design",
+          "Week 5-6: Assembly Design and Large Assembly Management",
+          "Week 7-8: Generative Surface Design",
+          "Week 9-10: Class-A Surfacing for Automotive",
+          "Week 11-12: Advanced Simulation and Analysis",
+          "Week 13: Industry-Specific Projects",
+          "Week 14: Certification Preparation and Portfolio Review"
+        ]
+      }
     },
     {
       title: "3D Printing & Prototyping",
@@ -140,7 +247,34 @@ const Courses = () => {
       level: "Beginner",
       students: "2,100+",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      price: "$249"
+      price: "$249",
+      detailedInfo: {
+        overview: "Dive into the world of 3D printing and rapid prototyping. Learn to design for additive manufacturing, understand different 3D printing technologies, and master the complete prototyping workflow.",
+        features: [
+          "Complete 3D printing technology overview",
+          "Design for additive manufacturing (DfAM) principles",
+          "Hands-on experience with multiple 3D printers",
+          "Post-processing and finishing techniques",
+          "Material selection and optimization",
+          "Rapid prototyping workflow and best practices"
+        ],
+        benefits: [
+          "Practical experience with professional 3D printers",
+          "Understanding of rapid prototyping for product development",
+          "Portfolio of 3D printed prototypes",
+          "Knowledge of emerging additive manufacturing technologies"
+        ],
+        curriculum: [
+          "Week 1: 3D Printing Technologies and Applications",
+          "Week 2: Design for Additive Manufacturing",
+          "Week 3: 3D Modeling for Printing",
+          "Week 4: Printer Operation and Maintenance",
+          "Week 5: Materials and Print Settings Optimization",
+          "Week 6: Post-Processing and Finishing",
+          "Week 7: Advanced Techniques and Multi-Material Printing",
+          "Week 8: Final Project and Portfolio Development"
+        ]
+      }
     },
     {
       title: "CNC Programming Excellence",
@@ -149,7 +283,33 @@ const Courses = () => {
       level: "Intermediate",
       students: "1,900+",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      price: "$449"
+      price: "$449",
+      detailedInfo: {
+        overview: "Master CNC programming from fundamentals to advanced techniques. Learn G-code programming, CAM software operation, and precision machining strategies used in modern manufacturing.",
+        features: [
+          "Complete G-code programming mastery",
+          "Advanced CAM software training (Mastercam/Fusion 360)",
+          "Toolpath optimization and machining strategies",
+          "CNC machine setup and operation",
+          "Quality control and precision measurement",
+          "Advanced machining techniques and troubleshooting"
+        ],
+        benefits: [
+          "Industry-recognized CNC programming certification",
+          "Hands-on experience with professional CNC machines",
+          "Job placement assistance in manufacturing companies",
+          "Understanding of modern manufacturing processes"
+        ],
+        curriculum: [
+          "Week 1-2: CNC Fundamentals and G-code Basics",
+          "Week 3-4: CAM Software Operation and Setup",
+          "Week 5-6: Milling Operations and Toolpath Strategies",
+          "Week 7-8: Turning Operations and Lathe Programming",
+          "Week 9-10: Advanced Machining and Multi-Axis Programming",
+          "Week 11: Quality Control and Precision Measurement",
+          "Week 12: Final Project and Industry Certification"
+        ]
+      }
     }
   ];
 
@@ -414,7 +574,7 @@ const Courses = () => {
             </p>
           </div>
 
-          {/* <Carousel
+          <Carousel
             opts={{
               align: "start",
               loop: true,
@@ -423,7 +583,10 @@ const Courses = () => {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {popularCourses.map((course, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                <CarouselItem
+                  key={index}
+                  className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+                >
                   <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 h-full group hover:scale-105">
                     <div className="h-48 relative overflow-hidden">
                       <img 
@@ -437,13 +600,17 @@ const Courses = () => {
                           <Badge className="bg-white/20 text-white border-white/30 animate-float">
                             {course.level}
                           </Badge>
-                          <span className="text-white font-bold text-lg animate-fade-in">{course.price}</span>
+                          <span className="text-white font-bold text-lg animate-fade-in">
+                            {course.price}
+                          </span>
                         </div>
                         <h4 className="text-xl font-bold text-white">{course.title}</h4>
                       </div>
                     </div>
                     <CardContent className="p-6 flex flex-col flex-grow">
-                      <p className="text-gray-600 mb-4 leading-relaxed flex-grow">{course.description}</p>
+                      <p className="text-gray-600 mb-4 leading-relaxed flex-grow">
+                        {course.description}
+                      </p>
                       <div className="flex justify-between items-center mb-6 text-sm text-gray-500">
                         <span>⏱️ {course.duration}</span>
                         <span>👥 {course.students} students</span>
@@ -452,81 +619,126 @@ const Courses = () => {
                         <Button className="flex-1 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 hover:scale-105 transition-transform duration-200">
                           Enroll Now
                         </Button>
-                        <Button variant="outline" className="flex-1 hover:scale-105 transition-transform duration-200">
-                          Learn More
-                        </Button>
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button variant="outline" className="flex-1 hover:scale-105 transition-transform duration-200">
+                              Learn More
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                            <DialogHeader>
+                              <DialogTitle className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                                <Award className="h-8 w-8 text-orange-500" />
+                                {course.title}
+                              </DialogTitle>
+                              <DialogDescription className="text-lg text-gray-600 mt-2">
+                                {course.detailedInfo.overview}
+                              </DialogDescription>
+                            </DialogHeader>
+                            
+                            {/* Course Info Cards */}
+                            <div className="grid grid-cols-3 gap-4 mt-6">
+                              <div className="bg-orange-50 p-4 rounded-lg text-center">
+                                <Clock className="h-6 w-6 text-orange-500 mx-auto mb-2" />
+                                <div className="font-semibold text-gray-900">Duration</div>
+                                <div className="text-gray-600 text-sm">{course.duration}</div>
+                              </div>
+                              <div className="bg-blue-50 p-4 rounded-lg text-center">
+                                <Users className="h-6 w-6 text-blue-500 mx-auto mb-2" />
+                                <div className="font-semibold text-gray-900">Students</div>
+                                <div className="text-gray-600 text-sm">{course.students}</div>
+                              </div>
+                              <div className="bg-green-50 p-4 rounded-lg text-center">
+                                <Star className="h-6 w-6 text-green-500 mx-auto mb-2" />
+                                <div className="font-semibold text-gray-900">Level</div>
+                                <div className="text-gray-600 text-sm">{course.level}</div>
+                              </div>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-6 mt-6">
+                              {/* Features Section */}
+                              <div>
+                                <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                                  <Settings className="h-5 w-5" />
+                                  Course Features
+                                </h4>
+                                <ul className="space-y-2">
+                                  {course.detailedInfo.features.map((feature, idx) => (
+                                    <li key={idx} className="flex items-start gap-2 text-gray-600">
+                                      <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
+                                      <span className="text-sm">{feature}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+
+                              {/* Benefits Section */}
+                              <div>
+                                <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                                  <Star className="h-5 w-5" />
+                                  Benefits
+                                </h4>
+                                <ul className="space-y-2">
+                                  {course.detailedInfo.benefits.map((benefit, idx) => (
+                                    <li key={idx} className="flex items-start gap-2 text-gray-600">
+                                      <CheckCircle className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
+                                      <span className="text-sm">{benefit}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+
+                            {/* Curriculum Section */}
+                            <div className="mt-6">
+                              <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                                <Book className="h-5 w-5" />
+                                Course Curriculum
+                              </h4>
+                              <div className="bg-gray-50 rounded-lg p-4">
+                                <ul className="space-y-2">
+                                  {course.detailedInfo.curriculum.map((item, idx) => (
+                                    <li key={idx} className="flex items-start gap-2 text-gray-600">
+                                      <div className="w-6 h-6 rounded-full bg-orange-100 text-orange-600 text-xs flex items-center justify-center font-semibold mt-0.5 flex-shrink-0">
+                                        {idx + 1}
+                                      </div>
+                                      <span className="text-sm">{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+
+                            {/* Price and Action Buttons */}
+                            <div className="flex items-center justify-between mt-6 p-4 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-lg">
+                              <div>
+                                <div className="text-2xl font-bold text-gray-900">{course.price}</div>
+                                <div className="text-sm text-gray-600">One-time payment</div>
+                              </div>
+                              <div className="flex gap-3">
+                                <Button className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
+                                  Enroll Now
+                                </Button>
+                                <Button variant="outline">
+                                  Contact Us
+                                </Button>
+                              </div>
+                            </div>
+                          </DialogContent>
+                        </Dialog>
                       </div>
                     </CardContent>
                   </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel> */}
 
-          <Carousel
-  opts={{
-    align: "start",
-    loop: true,
-  }}
-  className="w-full"
->
-  <CarouselContent className="-ml-2 md:-ml-4">
-    {popularCourses.map((course, index) => (
-      <CarouselItem
-        key={index}
-        className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
-      >
-        <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 h-full group hover:scale-105">
-          <div className="h-48 relative overflow-hidden">
-            <img 
-              src={course.image} 
-              alt={course.title}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300"></div>
-            <div className="absolute bottom-4 left-4 right-4">
-              <div className="flex justify-between items-center mb-2">
-                <Badge className="bg-white/20 text-white border-white/30 animate-float">
-                  {course.level}
-                </Badge>
-                <span className="text-white font-bold text-lg animate-fade-in">
-                  {course.price}
-                </span>
-              </div>
-              <h4 className="text-xl font-bold text-white">{course.title}</h4>
+            {/* Hide navigation on small screens */}
+            <div className="hidden md:block">
+              <CarouselPrevious />
+              <CarouselNext />
             </div>
-          </div>
-          <CardContent className="p-6 flex flex-col flex-grow">
-            <p className="text-gray-600 mb-4 leading-relaxed flex-grow">
-              {course.description}
-            </p>
-            <div className="flex justify-between items-center mb-6 text-sm text-gray-500">
-              <span>⏱️ {course.duration}</span>
-              <span>👥 {course.students} students</span>
-            </div>
-            <div className="flex gap-2">
-              <Button className="flex-1 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 hover:scale-105 transition-transform duration-200">
-                Enroll Now
-              </Button>
-              <Button variant="outline" className="flex-1 hover:scale-105 transition-transform duration-200">
-                Learn More
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </CarouselItem>
-    ))}
-  </CarouselContent>
-
-  {/* 👇 Hide navigation on small screens */}
-  <div className="hidden md:block">
-    <CarouselPrevious />
-    <CarouselNext />
-  </div>
-</Carousel>
-
+          </Carousel>
         </div>
 
         {/* Skills Section */}
@@ -553,22 +765,7 @@ const Courses = () => {
         </div>
       </div>
 
-      {/* Social Media Buttons
-      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3">
-        {socialMediaLinks.map((social, index) => (
-          <a
-            key={index}
-            href={social.href}
-            className={`w-12 h-12 rounded-full ${social.bgColor} text-white flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 animate-float`}
-            style={{ animationDelay: `${index * 0.2}s` }}
-            title={social.label}
-          >
-            {social.icon}
-          </a>
-        ))}
-      </div> */}
-
- {/* Social Media Buttons at Bottom */}
+      {/* Social Media Buttons at Bottom */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         <a href="https://www.youtube.com/@The_Art_of_India" className="w-12 h-12 rounded-full bg-red-600 hover:bg-red-700 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300" title="YouTube">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5">
