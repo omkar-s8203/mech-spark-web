@@ -50,7 +50,7 @@ export const courseCategories: CourseCategory[] = [
     description: "Hands-on training for tools like SolidWorks and CATIA. Programs for all expertise levels with real-world projects.",
     color: "bg-yellow-500",
     textColor: "text-yellow-600",
-    bgImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    bgImage: "/lovable-uploads/81aed992-67ef-4f33-a0ba-a79be45d6687.png",
     detailedInfo: {
       overview: "Our comprehensive CAD, CAM, & CAE software training programs are designed to equip students and professionals with industry-standard skills in mechanical design and engineering.",
       features: [
@@ -78,7 +78,7 @@ export const courseCategories: CourseCategory[] = [
     description: "Support from concept to prototype with customized solutions. Guidance on materials and manufacturing processes.",
     color: "bg-gray-800",
     textColor: "text-gray-700",
-    bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    bgImage: "/lovable-uploads/04355239-8765-46db-aaa9-02bb2e6fd1c6.png",
     detailedInfo: {
       overview: "Our Solutions are assured for industries - Best A Grade Commercial Services. We provide end-to-end product design and development services for businesses looking to bring innovative products to market.",
       features: [
@@ -136,7 +136,7 @@ export const popularCourses: PopularCourse[] = [
     duration: "12 Weeks",
     level: "Beginner",
     students: "2,400+",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/e42da9ef-054a-4ccc-ae00-1c764b001b34.png",
     price: "$299",
     detailedInfo: {
       overview: "This comprehensive foundation course introduces you to the exciting world of automotive design. You'll learn the fundamental principles, tools, and methodologies used in modern automotive design processes.",
@@ -170,7 +170,7 @@ export const popularCourses: PopularCourse[] = [
     duration: "16 Weeks",
     level: "Advanced",
     students: "1,800+",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/863fc5c4-e705-4d27-994f-0836033f1473.png",
     price: "$499",
     detailedInfo: {
       overview: "Take your automotive design skills to the professional level with advanced techniques, complex projects, and industry-relevant methodologies used by leading automotive companies worldwide.",
@@ -205,7 +205,7 @@ export const popularCourses: PopularCourse[] = [
     duration: "10 Weeks",
     level: "Intermediate",
     students: "3,200+",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/8b6ca308-d4a2-44a4-9127-672c98e09620.png",
     price: "$399",
     detailedInfo: {
       overview: "Master SolidWorks from fundamentals to advanced features. This comprehensive course covers all aspects of SolidWorks including part modeling, assembly design, drawing creation, and simulation.",
@@ -243,7 +243,7 @@ export const popularCourses: PopularCourse[] = [
     duration: "14 Weeks",
     level: "Advanced",
     students: "1,500+",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/81aed992-67ef-4f33-a0ba-a79be45d6687.png",
     price: "$599",
     detailedInfo: {
       overview: "Master CATIA V5 and V6 for aerospace and automotive applications. This advanced course covers all major workbenches and prepares you for professional roles in leading aerospace and automotive companies.",
@@ -279,7 +279,7 @@ export const popularCourses: PopularCourse[] = [
     duration: "8 Weeks",
     level: "Beginner",
     students: "2,100+",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/04355239-8765-46db-aaa9-02bb2e6fd1c6.png",
     price: "$249",
     detailedInfo: {
       overview: "Dive into the world of 3D printing and rapid prototyping. Learn to design for additive manufacturing, understand different 3D printing technologies, and master the complete prototyping workflow.",
@@ -315,7 +315,7 @@ export const popularCourses: PopularCourse[] = [
     duration: "12 Weeks",
     level: "Intermediate",
     students: "1,900+",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/81aed992-67ef-4f33-a0ba-a79be45d6687.png",
     price: "$449",
     detailedInfo: {
       overview: "Master CNC programming from fundamentals to advanced techniques. Learn G-code programming, CAM software operation, and precision machining strategies used in modern manufacturing.",
