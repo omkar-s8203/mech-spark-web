@@ -80,20 +80,20 @@ export const courseCategories: CourseCategory[] = [
     textColor: "text-gray-700",
     bgImage: "/lovable-uploads/04355239-8765-46db-aaa9-02bb2e6fd1c6.png",
     detailedInfo: {
-      overview: "Our Solutions are assured for industries - Best A Grade Commercial Services. We provide end-to-end product design and development services for businesses looking to bring innovative products to market.",
+      overview: "Our Solutions are assured for industries - Best A Grade Commercial Services. We provide comprehensive New Product Development (R&D) services for businesses looking to innovate and create cutting-edge solutions.",
       features: [
-        "Complete product lifecycle management from concept to market",
-        "Advanced 3D modeling and simulation services",
-        "Material selection and manufacturing process optimization",
-        "Prototyping and testing validation",
-        "Cost analysis and design for manufacturing (DFM)",
-        "Quality assurance and compliance certification"
+        "New Product Development (R&D) - Complete innovation lifecycle management",
+        "Advanced research and development methodologies",
+        "Market analysis and feasibility studies",
+        "Prototype development and testing validation",
+        "Web site development with modern UI/UX design",
+        "Digital product strategy and implementation"
       ],
       benefits: [
-        "Reduced time-to-market with efficient design processes",
-        "Cost-effective solutions with optimized manufacturing",
-        "Risk mitigation through thorough testing and validation",
-        "Scalable designs for mass production"
+        "New Product Development (R&D) expertise for breakthrough innovations",
+        "Reduced time-to-market with efficient R&D processes",
+        "Modern web development solutions with responsive design",
+        "Comprehensive digital transformation support"
       ],
       duration: "2-8 months based on project complexity",
       investment: "Custom pricing based on project scope and requirements"
