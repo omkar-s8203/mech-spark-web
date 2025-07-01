@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -63,9 +62,16 @@ const PopularCourses = () => {
                     <span>👥 {course.students} students</span>
                   </div>
                   <div className="flex gap-2">
-                    <Button className="flex-1 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 hover:scale-105 transition-transform duration-200">
-                      Enroll Now
-                    </Button>
+                    <a
+                      href="https://decouvertes.trainercentralsite.in/#/signup"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 hover:scale-105 transition-transform duration-200">
+                        Enroll Now
+                      </Button>
+                    </a>
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant="outline" className="flex-1 hover:scale-105 transition-transform duration-200">
@@ -163,9 +169,15 @@ const PopularCourses = () => {
                             <div className="text-sm text-gray-600">One-time payment</div>
                           </div>
                           <div className="flex gap-3">
-                            <Button className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
-                              Enroll Now
-                            </Button>
+                            <a
+                              href="https://decouvertes.trainercentralsite.in/#/signup"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Button className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
+                                Enroll Now
+                              </Button>
+                            </a>
                             <Button variant="outline">
                               Contact Us
                             </Button>
