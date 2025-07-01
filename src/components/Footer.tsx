@@ -71,7 +71,7 @@ const Footer = () => {
 
                   <div>
                     <h3 className="text-xl font-bold text-white">Decouvertes</h3>
-                    <p className="text-sm text-gray-400">Accelerating the Technologies</p>
+                    <p className="text-sm text-gray-400">The Art Of India</p>
                   </div>
                 </div>
                 <p className="text-gray-400 mb-6 leading-relaxed">

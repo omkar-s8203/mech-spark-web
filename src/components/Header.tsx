@@ -15,7 +15,7 @@ const Header = () => {
               <img src="/logo.png" alt="Website Logo" className="w-10 h-10" />
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Decouvertes</h1>
-                <p className="text-xs text-gray-600">Accelerating the Technologies</p>
+                <p className="text-xs text-blue-600 font-magnolia">The Art Of India</p>
               </div>
             </a>
           </div>
@@ -36,27 +36,28 @@ const Header = () => {
                 About
               </a>
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfCsCqX8pQRcX3VktXY7-jZSU9IvQmyAnvvyEOPA4VzLf1Igg/viewform?usp=dialog"
+                href="https://forms.office.com/r/0e7umuTtmz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors"
               >
                 Contact
               </a>
-              <a href="/blog" className="text-gray-600 hover:text-orange-500 px-3 py-2 text-sm font-medium transition-colors">
-                Blog
-              </a>
             </div>
           </nav>
 
-          {/* Auth Buttons */}
+          {/* Auth Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="hover:bg-orange-50 hover:border-orange-500">
-              Login
-            </Button>
-            <Button className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
-              Sign Up
-            </Button>
+            <a href="https://decouvertes.trainercentralsite.in/#/login" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="hover:bg-orange-50 hover:border-orange-500">
+                Login
+              </Button>
+            </a>
+            <a href="https://decouvertes.trainercentralsite.in/#/signup" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
+                Sign Up
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -98,12 +99,16 @@ const Header = () => {
                 Blog
               </a>
               <div className="flex flex-col space-y-2 px-3 py-4">
-                <Button variant="outline" className="w-full hover:bg-orange-50 hover:border-orange-500">
-                  Login
-                </Button>
-                <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
-                  Sign Up
-                </Button>
+                <a href="https://decouvertes.trainercentralsite.in/#/login" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="w-full hover:bg-orange-50 hover:border-orange-500">
+                    Login
+                  </Button>
+                </a>
+                <a href="https://decouvertes.trainercentralsite.in/#/signup" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
+                    Sign Up
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

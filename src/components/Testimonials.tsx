@@ -3,42 +3,82 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, Quote } from 'lucide-react';
 
+// const testimonials = [
+//   {
+//     id: 1,
+//     name: "Sarah Johnson",
+//     role: "Product Manager",
+//     company: "Tech Innovations Ltd",
+//     content: "Decouvertes transformed our product development process. Their expertise in 3D modeling and prototyping helped us bring our vision to life faster than expected.",
+//     rating: 5,
+//     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=150&h=150&fit=crop&crop=face"
+//   },
+//   {
+//     id: 2,
+//     name: "Michael Chen",
+//     role: "Engineering Director",
+//     company: "Manufacturing Solutions Inc",
+//     content: "The training programs at Decouvertes are exceptional. Our team gained valuable skills in CAD design and mechanical engineering that directly improved our project outcomes.",
+//     rating: 5,
+//     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop&crop=face"
+//   },
+//   {
+//     id: 3,
+//     name: "Emily Rodriguez",
+//     role: "Startup Founder",
+//     company: "InnovateTech",
+//     content: "From concept to prototype, Decouvertes guided us through every step. Their R&D services and 3D printing capabilities were crucial for our product launch.",
+//     rating: 5,
+//     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=150&h=150&fit=crop&crop=face"
+//   },
+//   {
+//     id: 4,
+//     name: "David Kumar",
+//     role: "Design Engineer",
+//     company: "Precision Industries",
+//     content: "The courses offered by Decouvertes are practical and industry-relevant. I learned advanced CAD techniques that I use daily in my professional work.",
+//     rating: 5,
+//     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=150&h=150&fit=crop&crop=face"
+//   }
+// ];
+
+
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Priya Mehra",
     role: "Product Manager",
-    company: "Tech Innovations Ltd",
+    company: "NextGen Solutions Pvt. Ltd.",
     content: "Decouvertes transformed our product development process. Their expertise in 3D modeling and prototyping helped us bring our vision to life faster than expected.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=150&h=150&fit=crop&crop=face"
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
   },
   {
     id: 2,
-    name: "Michael Chen",
+    name: "Ravi Shankar",
     role: "Engineering Director",
-    company: "Manufacturing Solutions Inc",
+    company: "Bharat Precision Tech",
     content: "The training programs at Decouvertes are exceptional. Our team gained valuable skills in CAD design and mechanical engineering that directly improved our project outcomes.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop&crop=face"
+    image: "https://images.unsplash.com/photo-1603415526960-f8f0a1f2b0c5?w=150&h=150&fit=crop&crop=face"
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
+    name: "Anjali Nair",
     role: "Startup Founder",
-    company: "InnovateTech",
+    company: "InnovateKaro",
     content: "From concept to prototype, Decouvertes guided us through every step. Their R&D services and 3D printing capabilities were crucial for our product launch.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=150&h=150&fit=crop&crop=face"
+    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&h=150&fit=crop&crop=face"
   },
   {
     id: 4,
-    name: "David Kumar",
+    name: "Amit Verma",
     role: "Design Engineer",
-    company: "Precision Industries",
+    company: "Shakti Manufacturing Co.",
     content: "The courses offered by Decouvertes are practical and industry-relevant. I learned advanced CAD techniques that I use daily in my professional work.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=150&h=150&fit=crop&crop=face"
+    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=150&h=150&fit=crop&crop=face"
   }
 ];
 
@@ -63,7 +103,7 @@ const Testimonials = () => {
               <CardContent className="p-6">
                 {/* Quote Icon */}
                 <div className="mb-4">
-                  <Quote className="h-6 w-6 text-blue-600" />
+                  <Quote className="h-6 w-6 text-orange-500" />
                 </div>
 
                 {/* Rating */}
@@ -103,17 +143,7 @@ const Testimonials = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
-            Ready to join our satisfied clients?
-          </p>
-          <a
-            href="#services"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300"
-          >
-            Get Started Today
-          </a>
-        </div>
+        
       </div>
     </section>
   );
