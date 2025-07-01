@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Settings, Code, Image, Users } from 'lucide-react';
 
 const Services = () => {
@@ -11,22 +11,140 @@ const Services = () => {
       title: "New Product Development (R&D)",
       description: "Our services are designed to empower new developments and innovations, backed by our creative and technology-oriented team. From concept to reality, we specialize in providing comprehensive NPD and R&D services.",
       gradient: "from-orange-500 to-yellow-500",
-      bgGradient: "from-orange-50 to-yellow-50"
+      bgGradient: "from-orange-50 to-yellow-50",
+      detailedContent: `
+1. 2D to 3D CAD Conversion
+- Parametric part & assembly modeling
+- Manufacturing-ready designs
+- Compatible with SolidWorks, CATIA, and more
+
+2. Conceptual Product Design
+- Sketch-to-CAD development
+- Aesthetic & ergonomic modeling
+- Early-stage feasibility evaluation
+- Industrial design with manufacturability in mind
+
+3. Reverse Engineering Services
+- 3D scanning & geometry recreation
+- Functional replication & modification
+- Benchmarking and design upgrades
+
+4. CAE-Based Design Validation
+- Structural (FEA), thermal, and dynamic analysis
+- Material stress, deformation, and fatigue studies
+- Lightweighting and durability optimization
+- Tools used: SolidWorks Simulation, ANSYS, HyperWorks
+
+5. Rapid Prototyping & 3D Printing
+- FDM/FFF printing for plastic parts
+- Functional and aesthetic prototypes
+- In-house support with DFT350 & DFTD250 printers
+
+6. Design for Manufacturing (DFM) & Assembly (DFA)
+- Material and process selection
+- Part count reduction
+- Tooling feasibility and manufacturability checks
+
+7. Technical Documentation & Engineering Drawings
+- Detailed 2D drawings with GD&T
+- Bill of Materials (BOM), exploded views, and assembly instructions
+- Manufacturing process notes and QC guidelines
+
+8. Product Cost Estimation & Vendor Support
+- BOM-based cost estimation
+- Vendor sourcing assistance
+- Component selection for cost-efficiency
+
+9. Compliance & Regulatory Assistance
+- CE, RoHS, ISO guidance
+- IP rating and material compliance support
+- Product testing plan recommendations
+
+10. Packaging Design & Prototyping
+- Structural and branding integration
+- Cost-effective and eco-friendly designs
+- Prototype packaging samples
+
+11. Electromechanical Integration (Optional)
+- PCB enclosure design
+- Thermal management solutions
+- Component clearance & wire routing
+
+Why Choose Decouvertes?
+- Expert team with multi-domain engineering experience
+- Proven design-to-prototype workflows
+- Affordable pricing and fast turnaround
+- In-house 3D printing and simulation capabilities
+- Custom solutions tailored for your product stage
+
+Contact Us
+Ready to build your product?
+Let's collaborate from concept to creation.
+Contact us today for a free consultation or demo!`
     },
     {
       icon: <Image className="h-8 w-8" />,
       title: "Prototyping",
       description: "Prototyping plays a crucial role in the product development process, allowing for testing, validation, and refinement of designs before mass production. Our state-of-the-art prototyping capabilities bring your concepts to life.",
       gradient: "from-blue-500 to-cyan-500",
-      bgGradient: "from-blue-50 to-cyan-50"
+      bgGradient: "from-blue-50 to-cyan-50",
+      detailedContent: `
+1. Rapid Prototyping
+- Quick 3D printed models using FDM/FFF technology
+- Same-day or next-day prototype delivery (based on complexity)
+- Ideal for fit-checks, concept validation & design reviews
+
+2. Functional Prototyping
+- High-strength prototypes for mechanical testing
+- Multi-material support (PLA, ABS, PETG, TPU, Nylon, etc.)
+- Assembly fit, motion, and usability testing
+
+3. Aesthetic/Presentation Prototypes
+- High-resolution surface finishing
+- Textured or smooth surface options
+- Custom color, polish, and logo placement
+
+4. Engineering Prototypes
+- Toleranced builds for precision fit
+- Compatibility with fasteners, inserts, and threads
+- Material behavior simulation for injection-molding substitutes
+
+5. Enclosure Prototyping
+- PCB and battery fit testing
+- Snap-fit or screw-fit closures
+- Wire-routing and ventilation features integrated
+
+6. Low-Volume Production (Bridge Prototyping)
+- Great for pilot batches or investor demos
+- Avoids high costs of mold/tool setup
+- Consistent quality across small batches
+
+7. Post-Processing & Finishing
+- Sanding, priming, and painting
+- Assembly support and inspection
+- Custom surface texturing or logo engraving
+
+Our In-House Capabilities
+- DFT350 and DFTD250 industrial-grade FDM 3D printers
+- Build volumes up to 350mm x 350mm x 300mm
+- Wide range of filaments: PLA, ABS, PETG, TPU, Wood-fill, Carbon Fiber, etc.
+- Dual-surface build plates: Plain PEI & Textured PEI
+- Prototypes validated using CAE tools for real-world simulation
+
+Get in Touch
+From design to physical reality - we build what you imagine.
+Talk to our team today for a free consultation or sample prototype demo.`
     },
+    // Add other services here as needed
+   
     {
-      icon: <Code className="h-8 w-8" />,
-      title: "Manufacturing Support",
-      description: "We understand that a successful product design is not limited to the ideation and prototyping stages. Our expertise extends to providing manufacturing support, including DFM and DFA services.",
-      gradient: "from-purple-500 to-pink-500",
-      bgGradient: "from-purple-50 to-pink-50"
-    },
+  icon: <Code className="h-8 w-8" />,
+  title: "Website Development Services",
+  description: "We craft high-performance, responsive websites tailored to your business goals. From portfolio sites to enterprise-level platforms, our team delivers scalable, SEO-friendly web solutions with modern technologies and UI excellence.",
+  gradient: "from-purple-500 to-pink-500",
+  bgGradient: "from-purple-50 to-pink-50"
+},
+
     {
       icon: <Users className="h-8 w-8" />,
       title: "Training Services",
@@ -65,11 +183,23 @@ const Services = () => {
                 <CardDescription className="text-gray-700 text-base leading-relaxed mb-6">
                   {service.description}
                 </CardDescription>
-                <Button 
-                  className={`bg-gradient-to-r ${service.gradient} hover:opacity-90 transition-opacity`}
-                >
-                  Learn More
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className={`bg-gradient-to-r ${service.gradient} hover:opacity-90 transition-opacity`}>
+                      Learn More
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-xl font-bold text-gray-900">
+                        {service.title}
+                      </DialogTitle>
+                    </DialogHeader>
+                    <pre className="whitespace-pre-wrap text-sm text-gray-700">
+                      {service.detailedContent}
+                    </pre>
+                  </DialogContent>
+                </Dialog>
               </CardContent>
             </Card>
           ))}
