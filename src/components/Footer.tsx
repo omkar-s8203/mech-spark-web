@@ -199,7 +199,7 @@ const Footer = () => {
               &times;
             </button>
             <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSfCsCqX8pQRcX3VktXY7-jZSU9IvQmyAnvvyEOPA4VzLf1Igg/viewform?usp=dialog"
+              src="https://decouvertes.trainercentralsite.in/course/free-workshop-kickstart-your-future-in-design-engineering#/home "
               width="100%"
               height="100%"
               allowFullScreen

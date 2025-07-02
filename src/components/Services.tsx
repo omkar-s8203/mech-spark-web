@@ -339,7 +339,32 @@ Contact us today for course details and enrollment!`
         </div>
 
         {/* Call to Action */}
-        <div className="text-center bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-12 text-white">
+
+<div className="text-center bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-12 text-white">
+  <h3 className="text-2xl font-bold mb-4">
+    Partner with us to turn your ideas into reality.
+  </h3>
+  <p className="text-lg text-gray-300 mb-8 max-w-4xl mx-auto">
+    Our comprehensive NPD and R&D services, combined with our dedication to creativity and technology, 
+    will drive the success of your mechanical and automobile product designs.
+  </p>
+  
+  <a
+    href="https://forms.office.com/r/BxULARiHpU"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button 
+      size="lg" 
+      className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3"
+    >
+      Start Your Project
+    </Button>
+  </a>
+</div>
+
+
+        {/* <div className="text-center bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-12 text-white">
           <h3 className="text-2xl font-bold mb-4">
             Partner with us to turn your ideas into reality.
           </h3>
@@ -353,7 +378,7 @@ Contact us today for course details and enrollment!`
           >
             Start Your Project
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

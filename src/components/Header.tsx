@@ -88,16 +88,14 @@ const Header = () => {
                 About
               </a>
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfCsCqX8pQRcX3VktXY7-jZSU9IvQmyAnvvyEOPA4VzLf1Igg/viewform?usp=dialog"
+                href="https://forms.office.com/r/0e7umuTtmz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-orange-500 block px-3 py-2 text-base font-medium"
               >
                 Contact
               </a>
-              <a href="/blog" className="text-gray-600 hover:text-orange-500 block px-3 py-2 text-base font-medium">
-                Blog
-              </a>
+              
               <div className="flex flex-col space-y-2 px-3 py-4">
                 <a href="https://decouvertes.trainercentralsite.in/#/login" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="w-full hover:bg-orange-50 hover:border-orange-500">
