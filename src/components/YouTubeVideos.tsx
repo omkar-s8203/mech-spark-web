@@ -5,79 +5,59 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Badge } from '@/components/ui/badge';
 import { Play, Calendar, Eye, Clock, ExternalLink } from 'lucide-react';
 
-// Sample video data - replace with actual YouTube API data
-const sampleVideos = [
+// Real video data from Decouvertes YouTube channel
+const channelVideos = [
   {
-    id: 'dQw4w9WgXcQ',
-    title: 'SolidWorks Tutorial: Advanced Assembly Design',
-    description: 'Learn advanced assembly techniques in SolidWorks including mates, configurations, and design tables.',
-    thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
-    duration: '15:24',
-    views: '12.5K',
+    id: 'YOUR_VIDEO_ID_1', // Replace with actual video ID
+    title: 'Workshop - Your Future in Design & Engineering Session 1!',
+    description: 'Join us for an insightful workshop session about your future in design and engineering. Learn about career opportunities, skill development, and industry insights.',
+    thumbnail: 'https://img.youtube.com/vi/YOUR_VIDEO_ID_1/maxresdefault.jpg',
+    duration: '16:20',
+    views: '21',
     publishedAt: '2024-01-15',
-    category: 'CAD Tutorial'
+    category: 'Workshop'
   },
   {
-    id: 'ScMzIvxBSi4',
-    title: '3D Printing Best Practices for Engineers',
-    description: 'Essential tips and techniques for professional 3D printing in engineering applications.',
-    thumbnail: 'https://img.youtube.com/vi/ScMzIvxBSi4/maxresdefault.jpg',
-    duration: '22:17',
-    views: '8.9K',
-    publishedAt: '2024-01-10',
-    category: '3D Printing'
+    id: 'YOUR_VIDEO_ID_2', // Replace with actual video ID
+    title: 'Wake Up the Power - Official Music Video | Motivational Song for Students & Professional',
+    description: 'An inspiring motivational music video designed to energize students and professionals. Wake up your inner power and achieve your goals.',
+    thumbnail: 'https://img.youtube.com/vi/YOUR_VIDEO_ID_2/maxresdefault.jpg',
+    duration: '3:05',
+    views: '32',
+    publishedAt: '2024-01-15',
+    category: 'Motivation'
   },
   {
-    id: 'K8K6g_ALOHs',
-    title: 'CATIA V5 Surface Modeling Masterclass',
-    description: 'Complete guide to surface modeling in CATIA V5 for automotive and aerospace applications.',
-    thumbnail: 'https://img.youtube.com/vi/K8K6g_ALOHs/maxresdefault.jpg',
-    duration: '31:45',
-    views: '15.2K',
-    publishedAt: '2024-01-05',
-    category: 'CAD Tutorial'
+    id: 'YOUR_VIDEO_ID_3', // Replace with actual video ID
+    title: 'Decouvertes Anthem | Official Company Theme',
+    description: 'The official anthem and company theme of Decouvertes Future Tech. Experience our vision, mission, and values through this inspiring theme.',
+    thumbnail: 'https://img.youtube.com/vi/YOUR_VIDEO_ID_3/maxresdefault.jpg',
+    duration: '1:51',
+    views: '35',
+    publishedAt: '2024-01-15',
+    category: 'Company'
   },
   {
-    id: 'fJ9rUzIMcZQ',
-    title: 'Product Development Process: Concept to Market',
-    description: 'Step-by-step walkthrough of the complete product development lifecycle.',
-    thumbnail: 'https://img.youtube.com/vi/fJ9rUzIMcZQ/maxresdefault.jpg',
-    duration: '18:32',
-    views: '6.7K',
-    publishedAt: '2023-12-28',
-    category: 'Product Development'
-  },
-  {
-    id: 'L_jWHffIx5E',
-    title: 'FEA Analysis in SolidWorks Simulation',
-    description: 'Learn finite element analysis fundamentals using SolidWorks Simulation software.',
-    thumbnail: 'https://img.youtube.com/vi/L_jWHffIx5E/maxresdefault.jpg',
-    duration: '26:58',
-    views: '11.3K',
-    publishedAt: '2023-12-20',
-    category: 'CAE Analysis'
-  },
-  {
-    id: 'ZZ5LpwO-An4',
-    title: 'Rapid Prototyping with DFT350 3D Printer',
-    description: 'Hands-on demonstration of our DFT350 3D printer for rapid prototyping applications.',
-    thumbnail: 'https://img.youtube.com/vi/ZZ5LpwO-An4/maxresdefault.jpg',
-    duration: '12:41',
-    views: '9.8K',
-    publishedAt: '2023-12-15',
-    category: '3D Printing'
+    id: 'YOUR_VIDEO_ID_4', // Replace with actual video ID
+    title: 'Decouvertes Future Tech Intro',
+    description: 'Introduction to Decouvertes Future Tech - your partner in product development, 3D printing, and engineering solutions.',
+    thumbnail: 'https://img.youtube.com/vi/YOUR_VIDEO_ID_4/maxresdefault.jpg',
+    duration: '1:39',
+    views: '30',
+    publishedAt: '2024-01-15',
+    category: 'Company'
   }
 ];
 
-const categories = ['All', 'CAD Tutorial', '3D Printing', 'Product Development', 'CAE Analysis'];
+const categories = ['All', 'Workshop', 'Motivation', 'Company'];
 
 const YouTubeVideos = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const filteredVideos = selectedCategory === 'All' 
-    ? sampleVideos 
-    : sampleVideos.filter(video => video.category === selectedCategory);
+    ? channelVideos 
+    : channelVideos.filter(video => video.category === selectedCategory);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -89,10 +69,9 @@ const YouTubeVideos = () => {
 
   const getCategoryColor = (category: string) => {
     const colors = {
-      'CAD Tutorial': 'bg-blue-100 text-blue-800',
-      '3D Printing': 'bg-green-100 text-green-800',
-      'Product Development': 'bg-purple-100 text-purple-800',
-      'CAE Analysis': 'bg-orange-100 text-orange-800'
+      'Workshop': 'bg-blue-100 text-blue-800',
+      'Motivation': 'bg-green-100 text-green-800',
+      'Company': 'bg-purple-100 text-purple-800'
     };
     return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800';
   };
@@ -111,7 +90,7 @@ const YouTubeVideos = () => {
           </p>
           <Button 
             className="bg-red-600 hover:bg-red-700 text-white"
-            onClick={() => window.open('https://youtube.com/@decouvertesfuturetech', '_blank')}
+            onClick={() => window.open('https://youtube.com/@The_Art_of_India', '_blank')}
           >
             <ExternalLink className="h-4 w-4 mr-2" />
             Visit Our YouTube Channel
@@ -226,7 +205,7 @@ const YouTubeVideos = () => {
           <Button 
             size="lg" 
             className="bg-white text-red-600 hover:bg-gray-100"
-            onClick={() => window.open('https://youtube.com/@decouvertesfuturetech?sub_confirmation=1', '_blank')}
+            onClick={() => window.open('https://youtube.com/@The_Art_of_India?sub_confirmation=1', '_blank')}
           >
             <Play className="h-5 w-5 mr-2" />
             Subscribe Now
