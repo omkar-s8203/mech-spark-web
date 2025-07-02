@@ -8,40 +8,40 @@ import { Play, Calendar, Eye, Clock, ExternalLink } from 'lucide-react';
 // Real video data from Decouvertes YouTube channel
 const channelVideos = [
   {
-    id: 'YOUR_VIDEO_ID_1', // Replace with actual video ID
+    id: 'u-QqkjXlWTc',
     title: 'Workshop - Your Future in Design & Engineering Session 1!',
     description: 'Join us for an insightful workshop session about your future in design and engineering. Learn about career opportunities, skill development, and industry insights.',
-    thumbnail: 'https://img.youtube.com/vi/YOUR_VIDEO_ID_1/maxresdefault.jpg',
+    thumbnail: 'https://img.youtube.com/vi/u-QqkjXlWTc/maxresdefault.jpg',
     duration: '16:20',
     views: '21',
     publishedAt: '2024-01-15',
     category: 'Workshop'
   },
   {
-    id: 'YOUR_VIDEO_ID_2', // Replace with actual video ID
+    id: '3Ol_YTMPmn4',
     title: 'Wake Up the Power - Official Music Video | Motivational Song for Students & Professional',
     description: 'An inspiring motivational music video designed to energize students and professionals. Wake up your inner power and achieve your goals.',
-    thumbnail: 'https://img.youtube.com/vi/YOUR_VIDEO_ID_2/maxresdefault.jpg',
+    thumbnail: 'https://img.youtube.com/vi/3Ol_YTMPmn4/maxresdefault.jpg',
     duration: '3:05',
     views: '32',
     publishedAt: '2024-01-15',
     category: 'Motivation'
   },
   {
-    id: 'YOUR_VIDEO_ID_3', // Replace with actual video ID
+    id: 'haZm0pwzOR4',
     title: 'Decouvertes Anthem | Official Company Theme',
     description: 'The official anthem and company theme of Decouvertes Future Tech. Experience our vision, mission, and values through this inspiring theme.',
-    thumbnail: 'https://img.youtube.com/vi/YOUR_VIDEO_ID_3/maxresdefault.jpg',
+    thumbnail: 'https://img.youtube.com/vi/haZm0pwzOR4/maxresdefault.jpg',
     duration: '1:51',
     views: '35',
     publishedAt: '2024-01-15',
     category: 'Company'
   },
   {
-    id: 'YOUR_VIDEO_ID_4', // Replace with actual video ID
+    id: 'sVzQRjkA54s',
     title: 'Decouvertes Future Tech Intro',
     description: 'Introduction to Decouvertes Future Tech - your partner in product development, 3D printing, and engineering solutions.',
-    thumbnail: 'https://img.youtube.com/vi/YOUR_VIDEO_ID_4/maxresdefault.jpg',
+    thumbnail: 'https://img.youtube.com/vi/sVzQRjkA54s/maxresdefault.jpg',
     duration: '1:39',
     views: '30',
     publishedAt: '2024-01-15',
