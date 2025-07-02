@@ -142,7 +142,68 @@ Talk to our team today for a free consultation or sample prototype demo.`
   title: "Website Development Services",
   description: "We craft high-performance, responsive websites tailored to your business goals. From portfolio sites to enterprise-level platforms, our team delivers scalable, SEO-friendly web solutions with modern technologies and UI excellence.",
   gradient: "from-purple-500 to-pink-500",
-  bgGradient: "from-purple-50 to-pink-50"
+  bgGradient: "from-purple-50 to-pink-50",
+  detailedContent: `
+1. Custom Website Development
+- Responsive, mobile-first design approach
+- Modern frameworks: React, Vue, Angular
+- Progressive Web Apps (PWA) development
+- Cross-browser compatibility assured
+
+2. E-Commerce Solutions
+- Online store development with payment gateways
+- Inventory management systems
+- Shopping cart and checkout optimization
+- Multi-vendor marketplace platforms
+
+3. Content Management Systems (CMS)
+- WordPress, Drupal, and custom CMS solutions
+- Easy-to-use admin panels
+- Content workflow and user role management
+- SEO-optimized content structures
+
+4. Frontend Development
+- HTML5, CSS3, JavaScript (ES6+)
+- React, Vue.js, Angular frameworks
+- Tailwind CSS, Bootstrap, Material UI
+- Interactive animations and micro-interactions
+
+5. Backend Development
+- Node.js, Python, PHP development
+- RESTful API and GraphQL services
+- Database design and optimization
+- Third-party integrations and webhooks
+
+6. Performance Optimization
+- Page speed optimization
+- Image compression and lazy loading
+- Code splitting and bundling
+- CDN integration and caching strategies
+
+7. SEO & Digital Marketing Integration
+- Search engine optimization (SEO)
+- Google Analytics and tracking setup
+- Social media integration
+- Email marketing automation setup
+
+8. Maintenance & Support
+- Regular security updates
+- Performance monitoring
+- Bug fixes and feature enhancements
+- 24/7 technical support
+
+Why Choose Our Web Development Services?
+- Modern, scalable architecture
+- Mobile-responsive design guaranteed
+- SEO-friendly code structure
+- Fast loading times and performance
+- Secure and reliable hosting solutions
+- Post-launch support and maintenance
+
+Contact Us
+Ready to build your digital presence?
+Let's create a website that drives results for your business.
+Contact us today for a free consultation and project quote!`
 },
 
     {
@@ -150,7 +211,77 @@ Talk to our team today for a free consultation or sample prototype demo.`
       title: "Training Services",
       description: "We are expertise in corporate and industry specific CAD, CAM & CAE trainings. We provide personalized trainings to students and working professionals based on their industrial needs and future interest.",
       gradient: "from-green-500 to-teal-500",
-      bgGradient: "from-green-50 to-teal-50"
+      bgGradient: "from-green-50 to-teal-50",
+      detailedContent: `
+1. CAD Training Programs
+- SolidWorks (Basic to Advanced)
+- AutoCAD 2D & 3D Design
+- CATIA V5/V6 Product Design
+- Fusion 360 Design & Manufacturing
+- Inventor Professional Training
+
+2. CAM (Computer-Aided Manufacturing)
+- CNC Programming & Machining
+- Mastercam Training
+- SolidCAM Integration
+- Tool path optimization
+- Post-processor development
+
+3. CAE (Computer-Aided Engineering)
+- ANSYS Structural & Thermal Analysis
+- SolidWorks Simulation (FEA)
+- HyperWorks Training
+- CFD Analysis Fundamentals
+- Material selection and testing
+
+4. Specialized Industry Training
+- Automotive Design & Analysis
+- Aerospace Component Development
+- Medical Device Design
+- Consumer Product Development
+- Manufacturing Process Optimization
+
+5. Certification Programs
+- Industry-recognized certifications
+- Professional skill validation
+- Portfolio development guidance
+- Interview preparation support
+- Career counseling sessions
+
+6. Corporate Training Solutions
+- On-site training at your facility
+- Customized curriculum development
+- Team-based project training
+- Software license consultation
+- Ongoing technical support
+
+7. Online & Hybrid Learning
+- Live interactive sessions
+- Recorded video tutorials
+- Hands-on project assignments
+- One-on-one mentoring
+- Flexible scheduling options
+
+8. Student & Professional Programs
+- Internship placement assistance
+- Industry project collaborations
+- Resume building workshops
+- Technical skill assessments
+- Career transition support
+
+Why Choose Our Training Services?
+- Industry experts with 10+ years experience
+- Real-world project-based learning
+- Small batch sizes for personalized attention
+- Latest software versions and tools
+- Post-training support and mentorship
+- Job placement assistance
+- Certification preparation
+
+Contact Us
+Ready to advance your technical skills?
+Join our training programs and accelerate your career in engineering design.
+Contact us today for course details and enrollment!`
     }
   ];
 
