@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Settings, Code, Image, Users } from 'lucide-react';
+import ServicePopupContent from './ServicePopupContent';
 
 const Services = () => {
   const services = [
@@ -320,15 +321,16 @@ Contact us today for course details and enrollment!`
                       Learn More
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+                  <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
                     <DialogHeader>
-                      <DialogTitle className="text-xl font-bold text-gray-900">
+                      <DialogTitle className="text-2xl font-bold text-gray-900 flex items-center">
+                        <div className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${service.gradient} text-white mr-3`}>
+                          {service.icon}
+                        </div>
                         {service.title}
                       </DialogTitle>
                     </DialogHeader>
-                    <pre className="whitespace-pre-wrap text-sm text-gray-700">
-                      {service.detailedContent}
-                    </pre>
+                    <ServicePopupContent title={service.title} gradient={service.gradient} />
                   </DialogContent>
                 </Dialog>
               </CardContent>
