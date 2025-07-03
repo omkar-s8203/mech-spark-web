@@ -53,6 +53,32 @@ const printerProducts = [
 ];
 
 const ThreeDPrinterSection = () => {
+  const handleOrderNow = (printer: typeof printerProducts[0]) => {
+    const message = `🎯 *NEW ORDER REQUEST* 🎯
+
+📦 *Product:* ${printer.name}
+🏷️ *Category:* ${printer.category}
+⭐ *Grade:* ${printer.badge}
+
+📋 *Product Details:*
+${printer.description}
+
+🔧 *Technical Specifications:*
+• Build Volume: ${printer.specs.buildVolume}
+• Layer Resolution: ${printer.specs.layerResolution}
+• Compatible Materials: ${printer.specs.materials}
+• Connectivity: ${printer.specs.connectivity}
+
+✨ I'm interested in placing an order for this amazing 3D printer! Could you please provide more information about pricing, delivery, and availability?
+
+Looking forward to your response! 🚀`;
+
+    const phoneNumber = "+919876543210"; // Replace with actual WhatsApp business number
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
   return (
     <div className="mb-20">
       <div className="text-center mb-12 animate-fade-in">
@@ -118,7 +144,10 @@ const ThreeDPrinterSection = () => {
 
                       <div className="flex gap-3">
                         <div className="flex-1">
-                          <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 group-hover:scale-105 transition-transform duration-200">
+                          <Button 
+                            onClick={() => handleOrderNow(printer)}
+                            className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 group-hover:scale-105 transition-transform duration-200"
+                          >
                             Order Now
                           </Button>
                         </div>
