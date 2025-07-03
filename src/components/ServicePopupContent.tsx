@@ -15,20 +15,59 @@ const ServicePopupContent: React.FC<ServicePopupContentProps> = ({ title, gradie
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {[
           {
-            title: "2D to 3D CAD Conversion",
+            title: "1. 2D to 3D CAD Conversion",
+            description: "Convert your 2D engineering drawings into precise 3D models.",
             items: ["Parametric part & assembly modeling", "Manufacturing-ready designs", "Compatible with SolidWorks, CATIA, and more"]
           },
           {
-            title: "Conceptual Product Design", 
-            items: ["Sketch-to-CAD development", "Aesthetic & ergonomic modeling", "Early-stage feasibility evaluation"]
+            title: "2. Conceptual Product Design",
+            description: "Bring your product ideas to life with innovative and practical design solutions.",
+            items: ["Sketch-to-CAD development", "Aesthetic & ergonomic modeling", "Early-stage feasibility evaluation", "Industrial design with manufacturability in mind"]
           },
           {
-            title: "Reverse Engineering Services",
+            title: "3. Reverse Engineering Services",
+            description: "Reconstruct existing components into accurate 3D CAD models for redesign or improvement.",
             items: ["3D scanning & geometry recreation", "Functional replication & modification", "Benchmarking and design upgrades"]
           },
           {
-            title: "CAE-Based Design Validation",
-            items: ["Structural (FEA), thermal, and dynamic analysis", "Material stress, deformation studies", "Tools: SolidWorks Simulation, ANSYS, HyperWorks"]
+            title: "4. CAE-Based Design Validation",
+            description: "Validate product safety and performance using real-world simulation.",
+            items: ["Structural (FEA), thermal, and dynamic analysis", "Material stress, deformation, and fatigue studies", "Lightweighting and durability optimization", "Tools used: SolidWorks Simulation, ANSYS, HyperWorks"]
+          },
+          {
+            title: "5. Rapid Prototyping & 3D Printing",
+            description: "Quickly visualize and test your designs through physical models.",
+            items: ["FDM/FFF printing for plastic parts", "Functional and aesthetic prototypes", "In-house support with DFT350 & DFTD250 printers"]
+          },
+          {
+            title: "6. Design for Manufacturing (DFM) & Assembly (DFA)",
+            description: "Ensure that your product is cost-effective and easy to manufacture.",
+            items: ["Material and process selection", "Part count reduction", "Tooling feasibility and manufacturability checks"]
+          },
+          {
+            title: "7. Technical Documentation & Engineering Drawings",
+            description: "Deliver complete production-ready documents for shop-floor or vendor use.",
+            items: ["Detailed 2D drawings with GD&T", "Bill of Materials (BOM), exploded views, and assembly instructions", "Manufacturing process notes and QC guidelines"]
+          },
+          {
+            title: "8. Product Cost Estimation & Vendor Support",
+            description: "Evaluate and optimize the cost of production before you invest.",
+            items: ["BOM-based cost estimation", "Vendor sourcing assistance", "Component selection for cost-efficiency"]
+          },
+          {
+            title: "9. Compliance & Regulatory Assistance",
+            description: "Design products aligned with global standards and safety norms.",
+            items: ["CE, RoHS, ISO guidance", "IP rating and material compliance support", "Product testing plan recommendations"]
+          },
+          {
+            title: "10. Packaging Design & Prototyping",
+            description: "Protect and present your product with custom packaging solutions.",
+            items: ["Structural and branding integration", "Cost-effective and eco-friendly designs", "Prototype packaging samples"]
+          },
+          {
+            title: "11. Electromechanical Integration (Optional)",
+            description: "Design integration for products involving electronics and mechanical systems.",
+            items: ["PCB enclosure design", "Thermal management solutions", "Component clearance & wire routing"]
           }
         ].map((service, index) => (
           <Card key={index} className="border border-gray-200">
@@ -37,6 +76,11 @@ const ServicePopupContent: React.FC<ServicePopupContentProps> = ({ title, gradie
                 <CheckCircle className={`h-4 w-4 mr-2 bg-gradient-to-r ${gradient} bg-clip-text text-transparent`} />
                 {service.title}
               </CardTitle>
+              {service.description && (
+                <CardDescription className="text-sm text-gray-600 mt-1">
+                  {service.description}
+                </CardDescription>
+              )}
             </CardHeader>
             <CardContent className="pt-0">
               <ul className="space-y-1">
@@ -90,20 +134,39 @@ const ServicePopupContent: React.FC<ServicePopupContentProps> = ({ title, gradie
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {[
           {
-            title: "Rapid Prototyping",
-            items: ["Quick 3D printed models using FDM/FFF", "Same-day or next-day delivery", "Ideal for fit-checks & concept validation"]
+            title: "1. Rapid Prototyping",
+            description: "Accelerate your product development cycle with fast-turnaround prototypes.",
+            items: ["Quick 3D printed models using FDM/FFF technology", "Same-day or next-day prototype delivery (based on complexity)", "Ideal for fit-checks, concept validation & design reviews"]
           },
           {
-            title: "Functional Prototyping",
-            items: ["High-strength prototypes for testing", "Multi-material support (PLA, ABS, PETG, TPU)", "Assembly fit, motion, and usability testing"]
+            title: "2. Functional Prototyping",
+            description: "Test how your product works under real conditions.",
+            items: ["High-strength prototypes for mechanical testing", "Multi-material support (PLA, ABS, PETG, TPU, Nylon, etc.)", "Assembly fit, motion, and usability testing"]
           },
           {
-            title: "Engineering Prototypes", 
-            items: ["Toleranced builds for precision fit", "Compatible with fasteners & inserts", "Material behavior simulation"]
+            title: "3. Aesthetic/Presentation Prototypes",
+            description: "Build visually refined models for client presentations, exhibitions, or marketing.",
+            items: ["High-resolution surface finishing", "Textured or smooth surface options", "Custom color, polish, and logo placement"]
           },
           {
-            title: "Post-Processing & Finishing",
-            items: ["Sanding, priming, and painting", "Assembly support and inspection", "Custom surface texturing"]
+            title: "4. Engineering Prototypes",
+            description: "Designed for pre-production validation.",
+            items: ["Toleranced builds for precision fit", "Compatibility with fasteners, inserts, and threads", "Material behavior simulation for injection-molding substitutes"]
+          },
+          {
+            title: "5. Enclosure Prototyping",
+            description: "Perfect for electronics and IoT projects.",
+            items: ["PCB and battery fit testing", "Snap-fit or screw-fit closures", "Wire-routing and ventilation features integrated"]
+          },
+          {
+            title: "6. Low-Volume Production (Bridge Prototyping)",
+            description: "Need 5-50 parts before final tooling? We've got you covered.",
+            items: ["Great for pilot batches or investor demos", "Avoids high costs of mold/tool setup", "Consistent quality across small batches"]
+          },
+          {
+            title: "7. Post-Processing & Finishing",
+            description: "Improve the look and functionality of your prototype.",
+            items: ["Sanding, priming, and painting", "Assembly support and inspection", "Custom surface texturing or logo engraving"]
           }
         ].map((service, index) => (
           <Card key={index} className="border border-gray-200">
@@ -112,6 +175,11 @@ const ServicePopupContent: React.FC<ServicePopupContentProps> = ({ title, gradie
                 <CheckCircle className="h-4 w-4 mr-2 text-blue-500" />
                 {service.title}
               </CardTitle>
+              {service.description && (
+                <CardDescription className="text-sm text-gray-600 mt-1">
+                  {service.description}
+                </CardDescription>
+              )}
             </CardHeader>
             <CardContent className="pt-0">
               <ul className="space-y-1">
@@ -136,8 +204,9 @@ const ServicePopupContent: React.FC<ServicePopupContentProps> = ({ title, gradie
           {[
             "DFT350 and DFTD250 industrial-grade FDM 3D printers",
             "Build volumes up to 350mm x 350mm x 300mm",
-            "Wide range of filaments: PLA, ABS, PETG, TPU, Wood-fill",
-            "Dual-surface build plates: Plain PEI & Textured PEI"
+            "Wide range of filaments: PLA, ABS, PETG, TPU, Wood-fill, Carbon Fiber, etc.",
+            "Dual-surface build plates: Plain PEI & Textured PEI",
+            "Prototypes validated using CAE tools for real-world simulation"
           ].map((capability, index) => (
             <div key={index} className="flex items-center">
               <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
@@ -145,6 +214,15 @@ const ServicePopupContent: React.FC<ServicePopupContentProps> = ({ title, gradie
             </div>
           ))}
         </div>
+      </div>
+
+      <div className={`bg-gradient-to-r ${gradient} text-white rounded-lg p-6 text-center`}>
+        <h3 className="text-lg font-semibold mb-2">Get in Touch</h3>
+        <p className="text-sm opacity-90 mb-4">From design to physical reality - we build what you imagine.</p>
+        <Badge variant="secondary" className="bg-white text-gray-900">
+          <Phone className="h-3 w-3 mr-1" />
+          Talk to our team today for a free consultation or sample prototype demo
+        </Badge>
       </div>
     </div>
   );
