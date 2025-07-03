@@ -73,7 +73,7 @@ ${printer.description}
 
 Looking forward to your response! 🚀`;
 
-    const phoneNumber = "+918767424655"; // Replace with actual WhatsApp business number
+    const phoneNumber = "+91956103435"; // Replace with actual WhatsApp business number
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     
