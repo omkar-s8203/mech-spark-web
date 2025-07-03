@@ -118,7 +118,9 @@ const ThreeDPrinterSection = () => {
 
                       <div className="flex gap-3">
                         <div className="flex-1">
-                          <PDFQuoteModal />
+                          <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 group-hover:scale-105 transition-transform duration-200">
+                            Order Now
+                          </Button>
                         </div>
                         <div className="flex-1">
                           <DFT350Modal />
