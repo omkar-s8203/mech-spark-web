@@ -136,19 +136,35 @@ const Hero = () => {
               Innovate. Design. Build. Lead the Future.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <Button 
+              {/* <Button 
                 size="lg" 
                 className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3 transform hover:scale-105 transition-all duration-200"
               >
                 Get Started
-              </Button>
-              <Button 
+              </Button> */}
+<a
+  href="https://wa.me/+919561103435?text=Hey%20there!%20%F0%9F%9A%80%20I%20just%20explored%20your%20amazing%20website%20and%20I'm%20truly%20impressed.%20I'm%20interested%20in%20collaborating%20or%20learning%20more%20about%20your%20services.%20Let%E2%80%99s%20connect!"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block"
+>
+  <Button 
+    size="lg" 
+    className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3 transform hover:scale-105 transition-all duration-200"
+  >
+    Get Started
+  </Button>
+</a>
+
+
+
+              {/* <Button 
                 variant="outline" 
                 size="lg" 
                 className="border-black bg-black text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-3 transform hover:scale-105 transition-all duration-200"
               >
                 Learn More
-              </Button>
+              </Button> */}
             </div>
           </div>
 
@@ -232,19 +248,35 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <Button 
+              {/* <Button 
                 size="lg" 
                 className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3 w-full max-w-xs mx-auto transform hover:scale-105 transition-all duration-200"
               >
                 Get Started
-              </Button>
-              <Button 
+              </Button> */}
+
+<a
+  href="https://wa.me/+919561103435?text=Hey%20there!%20%F0%9F%9A%80%20I%20just%20explored%20your%20amazing%20website%20and%20I'm%20truly%20impressed.%20I'm%20interested%20in%20collaborating%20or%20learning%20more%20about%20your%20services.%20Let%E2%80%99s%20connect!"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block"
+>
+  <Button 
+    size="lg" 
+    className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3 transform hover:scale-105 transition-all duration-200"
+  >
+    Get Started
+  </Button>
+</a>
+
+
+              {/* <Button 
                 variant="outline" 
                 size="lg" 
                 className="border-black bg-black text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-3 w-full max-w-xs mx-auto transform hover:scale-105 transition-all duration-200"
               >
                 Learn More
-              </Button>
+              </Button> */}
             </div>
 
             {/* Mobile Stats */}
