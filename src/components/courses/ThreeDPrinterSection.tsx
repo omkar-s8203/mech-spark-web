@@ -1,22 +1,22 @@
-
 import React from 'react';
 import { Card, CardContent, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import DFT350Modal from '@/components/ui/DFT350Modal';
-import PDFQuoteModal from '@/components/ui/PDFQuoteModal';
+// import PrinterModal from '@/components/ui/PrinterModal';
+// import DFT350Modal from '@/components/ui/DFT350Modal';
+// import PDFQuoteModal from '@/components/ui/PDFQuoteModal';
 
 const printerProducts = [
   {
     id: 1,
-    name: "BRS250 Professional 3D Printer",
+    name: "DFT250 Professional 3D Printer",
     image: "/3dprinter.png",
-    badge: "Professional Grade",
+    badge: "Mid-Sized Build Volume",
     category: "3D Printing Equipment",
     description: "High-precision 3D printer capable of producing complex prototypes and production parts with exceptional quality and reliability.",
     specs: {
-      buildVolume: "250 x 250 x 250mm",
+      buildVolume: "250 x 250 x 200mm",
       layerResolution: "0.1 - 0.3mm",
       materials: "PLA, ABS, PETG",
       connectivity: "USB, SD Card"
@@ -24,13 +24,13 @@ const printerProducts = [
   },
   {
     id: 2,
-    name: "DFT350 Industrial 3D Printer",
+    name: "DFT300 Industrial 3D Printer",
     image: "/3dprinter.png",
-    badge: "Industrial Grade",
+    badge: "Mid-Sized Build Volume",
     category: "3D Printing Equipment",
     description: "Advanced industrial-grade 3D printer with larger build volume and enhanced precision for professional manufacturing applications.",
     specs: {
-      buildVolume: "350 x 350 x 400mm",
+      buildVolume: "300 x 300 x 250mm",
       layerResolution: "0.05 - 0.25mm",
       materials: "PLA, ABS, PETG, TPU, PEEK",
       connectivity: "Wi-Fi, Ethernet, USB"
@@ -38,19 +38,47 @@ const printerProducts = [
   },
   {
     id: 3,
-    name: "BRS180 Compact 3D Printer",
+    name: "DFT350 Compact 3D Printer",
     image: "/3dprinter.png",
-    badge: "Compact Design",
+    badge: "Large Format Build Volume",
     category: "3D Printing Equipment",
     description: "Compact yet powerful 3D printer perfect for educational institutions and small-scale prototyping with user-friendly features.",
     specs: {
-      buildVolume: "180 x 180 x 180mm",
+      buildVolume: "350 x 350 x 300mm",
+      layerResolution: "0.1 - 0.4mm",
+      materials: "PLA, ABS, Wood Fill",
+      connectivity: "USB, SD Card, Mobile App"
+    }
+  },
+  {
+    id: 4,
+    name: "DFT500 Compact 3D Printer",
+    image: "/3dprinter.png",
+    badge: "Ultra Large Format Build Volume",
+    category: "3D Printing Equipment",
+    description: "Compact yet powerful 3D printer perfect for educational institutions and small-scale prototyping with user-friendly features.",
+    specs: {
+      buildVolume: "500 x 500 x 450mm",
       layerResolution: "0.1 - 0.4mm",
       materials: "PLA, ABS, Wood Fill",
       connectivity: "USB, SD Card, Mobile App"
     }
   }
 ];
+
+// Helper function for badge color
+const getBadgeGradient = (badge: string) => {
+  switch (badge) {
+    case 'Mid-Sized Build Volume':
+      return 'from-blue-500 to-indigo-500';
+    case 'Large Format Build Volume':
+      return 'from-purple-500 to-pink-500';
+    case 'Ultra Large Format Build Volume':
+      return 'from-red-500 to-yellow-500';
+    default:
+      return 'from-green-500 to-teal-500';
+  }
+};
 
 const ThreeDPrinterSection = () => {
   const handleOrderNow = (printer: typeof printerProducts[0]) => {
@@ -73,12 +101,12 @@ ${printer.description}
 
 Looking forward to your response! 🚀`;
 
-    const phoneNumber = "+919561103435"; // Replace with actual WhatsApp business number
+    const phoneNumber = "+919561103435";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
     window.open(whatsappUrl, '_blank');
   };
+
   return (
     <div className="mb-20">
       <div className="text-center mb-12 animate-fade-in">
@@ -101,11 +129,7 @@ Looking forward to your response! 🚀`;
                         alt={printer.name}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <Badge className={`absolute top-4 left-4 ${
-                        printer.badge === 'Professional Grade' ? 'bg-gradient-to-r from-orange-500 to-yellow-500' :
-                        printer.badge === 'Industrial Grade' ? 'bg-gradient-to-r from-blue-600 to-purple-600' :
-                        'bg-gradient-to-r from-green-500 to-teal-500'
-                      }`}>
+                      <Badge className={`absolute top-4 left-4 bg-gradient-to-r ${getBadgeGradient(printer.badge)} text-white px-3 py-1 rounded-full shadow-md`}>
                         {printer.badge}
                       </Badge>
                     </div>
@@ -151,9 +175,9 @@ Looking forward to your response! 🚀`;
                             Order Now
                           </Button>
                         </div>
-                        <div className="flex-1">
+                        {/* <div className="flex-1">
                           <DFT350Modal />
-                        </div>
+                        </div> */}
                       </div>
                     </CardContent>
                   </div>
