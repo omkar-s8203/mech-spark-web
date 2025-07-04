@@ -137,7 +137,7 @@ export const popularCourses: PopularCourse[] = [
     level: "Beginner",
     students: "2,400+",
     image: "/lovable-uploads/e42da9ef-054a-4ccc-ae00-1c764b001b34.png",
-    price: "$299",
+    price: "",
     detailedInfo: {
       overview: "This comprehensive foundation course introduces you to the exciting world of automotive design. You'll learn the fundamental principles, tools, and methodologies used in modern automotive design processes.",
       features: [
@@ -171,7 +171,7 @@ export const popularCourses: PopularCourse[] = [
     level: "Advanced",
     students: "1,800+",
     image: "/lovable-uploads/863fc5c4-e705-4d27-994f-0836033f1473.png",
-    price: "$499",
+    price: "",
     detailedInfo: {
       overview: "Take your automotive design skills to the professional level with advanced techniques, complex projects, and industry-relevant methodologies used by leading automotive companies worldwide.",
       features: [
@@ -206,7 +206,7 @@ export const popularCourses: PopularCourse[] = [
     level: "Intermediate",
     students: "3,200+",
     image: "/lovable-uploads/8b6ca308-d4a2-44a4-9127-672c98e09620.png",
-    price: "$399",
+    price: "",
     detailedInfo: {
       overview: "Master SolidWorks from fundamentals to advanced features. This comprehensive course covers all aspects of SolidWorks including part modeling, assembly design, drawing creation, and simulation.",
       features: [
@@ -244,7 +244,7 @@ export const popularCourses: PopularCourse[] = [
     level: "Advanced",
     students: "1,500+",
     image: "/lovable-uploads/81aed992-67ef-4f33-a0ba-a79be45d6687.png",
-    price: "$599",
+    price: "",
     detailedInfo: {
       overview: "Master CATIA V5 and V6 for aerospace and automotive applications. This advanced course covers all major workbenches and prepares you for professional roles in leading aerospace and automotive companies.",
       features: [
@@ -280,7 +280,7 @@ export const popularCourses: PopularCourse[] = [
     level: "Beginner",
     students: "2,100+",
     image: "/lovable-uploads/04355239-8765-46db-aaa9-02bb2e6fd1c6.png",
-    price: "$249",
+    price: "",
     detailedInfo: {
       overview: "Dive into the world of 3D printing and rapid prototyping. Learn to design for additive manufacturing, understand different 3D printing technologies, and master the complete prototyping workflow.",
       features: [
@@ -316,7 +316,7 @@ export const popularCourses: PopularCourse[] = [
     level: "Intermediate",
     students: "1,900+",
     image: "/lovable-uploads/81aed992-67ef-4f33-a0ba-a79be45d6687.png",
-    price: "$449",
+    price: "",
     detailedInfo: {
       overview: "Master CNC programming from fundamentals to advanced techniques. Learn G-code programming, CAM software operation, and precision machining strategies used in modern manufacturing.",
       features: [
@@ -367,7 +367,7 @@ export const socialMediaLinks: SocialMediaLink[] = [
   {
     icon: React.createElement(Linkedin, { className: "h-5 w-5" }),
     label: "LinkedIn",
-    href: "https://www.linkedin.com/company/decouvertes-future-tech/",
+    href: "https://www.linkedin.com/company/decouvertes-future-tech-private-limited/?viewAsMember=true",
     bgColor: "bg-blue-600 hover:bg-blue-700"
   },
   {
