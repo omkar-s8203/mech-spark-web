@@ -41,12 +41,25 @@ const Footer = () => {
               We Help Build On Past & Prepare For Your Future.
             </h2>
             <div className="max-w-md mx-auto">
-              <Button
+              {/* <Button
                 size="lg"
                 className="bg-white text-orange-500 hover:bg-gray-100 font-semibold px-8 py-3"
               >
                 Get Started Today
-              </Button>
+              </Button> */}
+              <a
+  href="https://wa.me/919561103435?text=Hello%20%F0%9F%91%8B%2C%0A%0AI'm%20reaching%20out%20after%20exploring%20*Decouvertes%20(The%20Art%20of%20India)*%20%E2%80%94%20I'm%20impressed%20by%20your%20innovative%20work%20in%20product%20development%2C%20prototyping%2C%20web%20solutions%2C%20and%20training.%20%0A%0AI'd%20love%20to%20discuss%20how%20we%20can%20collaborate%20or%20learn%20more%20about%20your%20offerings.%20Please%20share%20further%20details%20at%20your%20convenience.%20Looking%20forward%20to%20hearing%20from%20your%20team!%20%F0%9F%99%8C%E2%9C%A8"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button
+    size="lg"
+    className="bg-white text-orange-500 hover:bg-gray-100 font-semibold px-8 py-3"
+  >
+    Get Started Today
+  </Button>
+</a>
+
             </div>
           </div>
         </div>
