@@ -3,9 +3,7 @@ import { Card, CardContent, CardTitle, CardDescription } from '@/components/ui/c
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-// import PrinterModal from '@/components/ui/PrinterModal';
-// import DFT350Modal from '@/components/ui/DFT350Modal';
-// import PDFQuoteModal from '@/components/ui/PDFQuoteModal';
+
 
 const printerProducts = [
   {
