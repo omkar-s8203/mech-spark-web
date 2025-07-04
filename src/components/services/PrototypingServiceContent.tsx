@@ -4,11 +4,22 @@ import ServiceCard from './ServiceCard';
 import WhyChooseSection from './WhyChooseSection';
 import CallToActionSection from './CallToActionSection';
 
+/**
+ * PrototypingServiceContent Component
+ * 
+ * Renders comprehensive prototyping services content including:
+ * - 7 different prototyping service categories
+ * - Detailed descriptions and features for each service
+ * - In-house capabilities and equipment
+ * - Contact information and call to action
+ */
+
 interface PrototypingServiceContentProps {
   gradient: string;
 }
 
 const PrototypingServiceContent: React.FC<PrototypingServiceContentProps> = ({ gradient }) => {
+  // Comprehensive prototyping services with detailed descriptions
   const services = [
     {
       title: "1. Rapid Prototyping",
@@ -47,6 +58,7 @@ const PrototypingServiceContent: React.FC<PrototypingServiceContentProps> = ({ g
     }
   ];
 
+  // Technical capabilities and equipment specifications
   const capabilities = [
     "DFT350 and DFTD250 industrial-grade FDM 3D printers",
     "Build volumes up to 350mm x 350mm x 300mm",

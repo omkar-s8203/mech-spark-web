@@ -4,11 +4,23 @@ import ServiceCard from './ServiceCard';
 import WhyChooseSection from './WhyChooseSection';
 import CallToActionSection from './CallToActionSection';
 
+/**
+ * TrainingServiceContent Component
+ * 
+ * Renders content for training services popup including:
+ * - CAD/CAM training programs
+ * - Certification options
+ * - Corporate training solutions
+ * - Benefits and reasons to choose
+ * - Call to action section
+ */
+
 interface TrainingServiceContentProps {
   gradient: string;
 }
 
 const TrainingServiceContent: React.FC<TrainingServiceContentProps> = ({ gradient }) => {
+  // Training service offerings organized by category
   const services = [
     {
       title: "CAD Training Programs",
@@ -28,6 +40,7 @@ const TrainingServiceContent: React.FC<TrainingServiceContentProps> = ({ gradien
     }
   ];
 
+  // Key benefits of choosing our training services
   const benefits = [
     "Industry experts with 10+ years experience",
     "Real-world project-based learning",

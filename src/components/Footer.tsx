@@ -1,19 +1,33 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
+/**
+ * Footer Component
+ * 
+ * Main footer section containing:
+ * - Newsletter/CTA section with WhatsApp integration
+ * - Company information and contact details
+ * - Navigation links (Corporate, Services, Legal)
+ * - Webinar registration with QR code
+ * - Copyright and legal links
+ * - Modal for webinar registration form
+ */
+
 const Footer = () => {
+  // Modal state for webinar registration form
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Navigation link arrays for dynamic rendering
   const corporateLinks = [
     "About Us",
-    "Services",
+    "Services", 
     "Careers",
     "News"
   ];
 
   const serviceLinks = [
     "Product Developments",
-    "Training Services",
+    "Training Services", 
     "Design Consultancy",
     "Web Development"
   ];
@@ -21,10 +35,11 @@ const Footer = () => {
   const legalLinks = [
     "Terms of Use",
     "Privacy Policy",
-    "Contact",
+    "Contact", 
     "Help Center"
   ];
 
+  // Modal control functions
   const openForm = () => setIsModalOpen(true);
   const closeForm = () => setIsModalOpen(false);
 
@@ -41,12 +56,7 @@ const Footer = () => {
               We Help Build On Past & Prepare For Your Future.
             </h2>
             <div className="max-w-md mx-auto">
-              {/* <Button
-                size="lg"
-                className="bg-white text-orange-500 hover:bg-gray-100 font-semibold px-8 py-3"
-              >
-                Get Started Today
-              </Button> */}
+              {/* WhatsApp CTA Button */}
               <a
   href="https://wa.me/919561103435?text=Hello%20%F0%9F%91%8B%2C%0A%0AI'm%20reaching%20out%20after%20exploring%20*Decouvertes%20(The%20Art%20of%20India)*%20%E2%80%94%20I'm%20impressed%20by%20your%20innovative%20work%20in%20product%20development%2C%20prototyping%2C%20web%20solutions%2C%20and%20training.%20%0A%0AI'd%20love%20to%20discuss%20how%20we%20can%20collaborate%20or%20learn%20more%20about%20your%20offerings.%20Please%20share%20further%20details%20at%20your%20convenience.%20Looking%20forward%20to%20hearing%20from%20your%20team!%20%F0%9F%99%8C%E2%9C%A8"
   target="_blank"
@@ -71,9 +81,7 @@ const Footer = () => {
               {/* Company Info */}
               <div className="lg:col-span-1">
                 <div className="flex items-center mb-6">
-                  {/* <div className="bg-gradient-to-r from-orange-500 to-yellow-500 p-2 rounded-lg mr-3">
-                    <span className="text-white font-bold text-xl">D</span>
-                  </div> */}
+                  {/* Company Logo */}
                   <div className="mr-3">
                     <img
                       src="/logo.png"
@@ -158,24 +166,16 @@ const Footer = () => {
                   </Button>
                 </div>
 
+                {/* QR Code for Webinar Registration */}
                 <div className="text-center md:text-right">
                   <div className="inline-block bg-white p-4 rounded-lg">
                     <img
-                      // src="/assets/images/qr.png"
                       src="/qr.png"
                       alt="Webinar QR Code"
                       className="w-32 h-32 object-cover rounded"
                     />
                   </div>
                 </div>
-
-                {/* <div className="text-center md:text-right">
-                  <div className="inline-block bg-white p-4 rounded-lg">
-                    <div className="w-32 h-32 bg-gray-200 rounded flex items-center justify-center">
-                      <span className="text-gray-500 text-sm">QR Code</span>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
@@ -201,16 +201,19 @@ const Footer = () => {
         </div>
       </footer>
 
-      {/* Modal for Google Form */}
+      {/* Webinar Registration Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
           <div className="bg-white rounded-xl shadow-xl w-[90%] md:w-[600px] h-[80%] p-4 relative">
+            {/* Close button */}
             <button
               onClick={closeForm}
               className="absolute top-3 right-3 text-gray-600 hover:text-red-500 text-xl font-bold"
+              aria-label="Close modal"
             >
               &times;
             </button>
+            {/* Embedded webinar registration form */}
             <iframe
               src="https://decouvertes.trainercentralsite.in/course/free-workshop-kickstart-your-future-in-design-engineering#/home "
               width="100%"

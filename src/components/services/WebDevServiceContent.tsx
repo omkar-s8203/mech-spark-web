@@ -4,11 +4,23 @@ import ServiceCard from './ServiceCard';
 import WhyChooseSection from './WhyChooseSection';
 import CallToActionSection from './CallToActionSection';
 
+/**
+ * WebDevServiceContent Component
+ * 
+ * Renders content for web development services popup including:
+ * - Custom website development options
+ * - E-commerce solutions
+ * - Frontend technologies
+ * - Performance optimization services
+ * - Benefits and call to action
+ */
+
 interface WebDevServiceContentProps {
   gradient: string;
 }
 
 const WebDevServiceContent: React.FC<WebDevServiceContentProps> = ({ gradient }) => {
+  // Web development service offerings organized by category
   const services = [
     {
       title: "Custom Website Development",
@@ -28,6 +40,7 @@ const WebDevServiceContent: React.FC<WebDevServiceContentProps> = ({ gradient })
     }
   ];
 
+  // Key benefits of choosing our web development services
   const benefits = [
     "Modern, scalable architecture",
     "Mobile-responsive design guaranteed",

@@ -4,12 +4,23 @@ import PrototypingServiceContent from './services/PrototypingServiceContent';
 import WebDevServiceContent from './services/WebDevServiceContent';
 import TrainingServiceContent from './services/TrainingServiceContent';
 
+/**
+ * ServicePopupContent Component
+ * 
+ * Router component that renders the appropriate service content
+ * based on the selected service title. Used in service popups/modals.
+ * 
+ * @param title - The service title to determine which content to render
+ * @param gradient - CSS gradient string for styling consistency
+ */
+
 interface ServicePopupContentProps {
   title: string;
   gradient: string;
 }
 
 const ServicePopupContent: React.FC<ServicePopupContentProps> = ({ title, gradient }) => {
+  // Route to appropriate service content component based on title
   const getContent = () => {
     switch (title) {
       case "New Product Development (R&D)":
