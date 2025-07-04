@@ -106,7 +106,7 @@ export const courseCategories: CourseCategory[] = [
     description: "3D printing services with high-quality output. Prototype testing and support for design optimization.",
     color: "bg-yellow-500",
     textColor: "text-yellow-600",
-    bgImage: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    bgImage: "/rapid_prototyping.png",
     detailedInfo: {
       overview: "State-of-the-art 3D printing and rapid prototyping services using professional-grade equipment to bring your designs to life with precision and quality.",
       features: [
