@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import PrivacyPolicyModal from '@/components/PrivacyPolicyModal';
+import TermsOfServiceModal from '@/components/TermsOfServiceModal';
 
 /**
  * Footer Component
@@ -14,8 +16,10 @@ import { Button } from '@/components/ui/button';
  */
 
 const Footer = () => {
-  // Modal state for webinar registration form
+  // Modal state for webinar registration form and legal modals
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
 
   // Navigation link arrays for dynamic rendering
   const corporateLinks = [
@@ -42,6 +46,41 @@ const Footer = () => {
   // Modal control functions
   const openForm = () => setIsModalOpen(true);
   const closeForm = () => setIsModalOpen(false);
+  
+  // Legal modal control functions
+  const openPrivacyModal = () => setIsPrivacyModalOpen(true);
+  const closePrivacyModal = () => setIsPrivacyModalOpen(false);
+  const openTermsModal = () => setIsTermsModalOpen(true);
+  const closeTermsModal = () => setIsTermsModalOpen(false);
+
+  // Handle different types of link clicks
+  const handleLegalLinkClick = (linkName: string) => {
+    switch (linkName) {
+      case 'Terms of Use':
+        openTermsModal();
+        break;
+      case 'Privacy Policy':
+        openPrivacyModal();
+        break;
+      case 'Contact':
+        // Open WhatsApp with contact message
+        window.open(
+          "https://wa.me/919561103435?text=Hello%20Decouvertes%20Team%21%20%F0%9F%91%8B%0A%0AI%20need%20assistance%20and%20would%20like%20to%20get%20in%20touch%20with%20your%20support%20team.%20Could%20you%20please%20help%20me%20with%20my%20inquiry%3F%0A%0AThank%20you%21",
+          '_blank'
+        );
+        break;
+      case 'Help Center':
+        // Open WhatsApp with help center message
+        window.open(
+          "https://wa.me/919561103435?text=Hello%20%F0%9F%91%8B%0A%0AI%20need%20help%20and%20support%20regarding%20Decouvertes%20services.%20Could%20you%20please%20assist%20me%20with%20the%20following%3A%0A%0A-%20%5BDescribe%20your%20issue%20here%5D%0A%0AThank%20you%20for%20your%20support%21%20%F0%9F%99%8F",
+          '_blank'
+        );
+        break;
+      default:
+        // For other links, do nothing or handle as needed
+        break;
+    }
+  };
 
   return (
     <>
@@ -141,9 +180,12 @@ const Footer = () => {
                 <ul className="space-y-3">
                   {legalLinks.map((link, index) => (
                     <li key={index}>
-                      <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+                      <button 
+                        onClick={() => handleLegalLinkClick(link)}
+                        className="text-gray-400 hover:text-orange-400 transition-colors text-left"
+                      >
                         {link}
-                      </a>
+                      </button>
                     </li>
                   ))}
                 </ul>
@@ -189,12 +231,18 @@ const Footer = () => {
                 ©2002 - 2023 Decouvertes - All rights reserved
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
-                <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+                <button 
+                  onClick={openPrivacyModal}
+                  className="text-gray-400 hover:text-orange-400 transition-colors"
+                >
                   Privacy Policy
-                </a>
-                <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+                </button>
+                <button 
+                  onClick={openTermsModal}
+                  className="text-gray-400 hover:text-orange-400 transition-colors"
+                >
                   Terms of Service
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -225,6 +273,18 @@ const Footer = () => {
           </div>
         </div>
       )}
+
+      {/* Privacy Policy Modal */}
+      <PrivacyPolicyModal 
+        isOpen={isPrivacyModalOpen} 
+        onClose={closePrivacyModal} 
+      />
+
+      {/* Terms of Service Modal */}
+      <TermsOfServiceModal 
+        isOpen={isTermsModalOpen} 
+        onClose={closeTermsModal} 
+      />
     </>
   );
 };
