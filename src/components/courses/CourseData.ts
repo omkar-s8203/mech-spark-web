@@ -16,6 +16,13 @@ export interface CourseCategory {
     benefits: string[];
     duration: string;
     investment: string;
+    additionalCharges?: {
+      registrationFee: string;
+      courseMaterials: string;
+      certification: string;
+      softwareLicense: string;
+    };
+    termsAndConditions?: string[];
   };
 }
 
@@ -32,6 +39,14 @@ export interface PopularCourse {
     features: string[];
     benefits: string[];
     curriculum: string[];
+    investment?: string;
+    additionalCharges?: {
+      registrationFee: string;
+      courseMaterials: string;
+      certification: string;
+      softwareLicense: string;
+    };
+    termsAndConditions?: string[];
   };
 }
 
@@ -67,8 +82,22 @@ export const courseCategories: CourseCategory[] = [
         "Networking opportunities with industry professionals",
         "Continuous support even after course completion"
       ],
-      duration: "3-6 months depending on specialization",
-      investment: "Starting from ₹15,000 - ₹45,000"
+      duration: "45 Days (90 hrs) - Hybrid Mode",
+      investment: "₹29,500 (Base Fee: ₹25,000 + GST: ₹4,500)",
+      additionalCharges: {
+        registrationFee: "₹500 (One-time, non-refundable)",
+        courseMaterials: "₹1,000 - ₹2,000 (Offline courses)",
+        certification: "Included in course fee",
+        softwareLicense: "Shared/student version provided"
+      },
+      termsAndConditions: [
+        "Payment to be made in full before course commencement",
+        "Installment options available for selected courses (with minimal processing fee)",
+        "GST @ 18% applicable on all training services",
+        "All prices subject to change as per government regulations",
+        "Proper Tax Invoice (with GSTIN) will be issued",
+        "Payment Methods: UPI, Bank Transfer, Card, Cash (offline)"
+      ]
     }
   },
   {
@@ -123,8 +152,22 @@ export const courseCategories: CourseCategory[] = [
         "High-quality surface finish and dimensional accuracy",
         "Support for complex geometries and overhangs"
       ],
-      duration: "1-5 days depending on complexity and quantity",
-      investment: "Starting from ₹50 per hour of print time"
+      duration: "5 Days (15 hrs) - Offline Mode",
+      investment: "₹7,080 (Base Fee: ₹6,000 + GST: ₹1,080)",
+      additionalCharges: {
+        registrationFee: "₹500 (One-time, non-refundable)",
+        courseMaterials: "₹1,000 - ₹2,000 (Offline courses)",
+        certification: "Included in course fee",
+        softwareLicense: "Shared/student version provided"
+      },
+      termsAndConditions: [
+        "Payment to be made in full before course commencement",
+        "Installment options available for selected courses (with minimal processing fee)",
+        "GST @ 18% applicable on all training services",
+        "All prices subject to change as per government regulations",
+        "Proper Tax Invoice (with GSTIN) will be issued",
+        "Payment Methods: UPI, Bank Transfer, Card, Cash (offline)"
+      ]
     }
   }
 ];
@@ -133,11 +176,11 @@ export const popularCourses: PopularCourse[] = [
   {
     title: "Automotive Design Foundation",
     description: "Master the fundamentals of automotive design with industry-standard tools and methodologies.",
-    duration: "12 Weeks",
+    duration: "30 Days (60 hrs)",
     level: "Beginner",
     students: "2,400+",
     image: "/lovable-uploads/e42da9ef-054a-4ccc-ae00-1c764b001b34.png",
-    price: "",
+    price: "₹21,240",
     detailedInfo: {
       overview: "This comprehensive foundation course introduces you to the exciting world of automotive design. You'll learn the fundamental principles, tools, and methodologies used in modern automotive design processes.",
       features: [
@@ -161,17 +204,32 @@ export const popularCourses: PopularCourse[] = [
         "Week 7-8: Materials and Manufacturing Basics",
         "Week 9-10: Design Project - Simple Component",
         "Week 11-12: Portfolio Development and Presentation"
+      ],
+      investment: "₹21,240 (Base Fee: ₹18,000 + GST: ₹3,240) - Online Mode",
+      additionalCharges: {
+        registrationFee: "₹500 (One-time, non-refundable)",
+        courseMaterials: "₹1,000 - ₹2,000 (Offline courses)",
+        certification: "Included in course fee",
+        softwareLicense: "Shared/student version provided"
+      },
+      termsAndConditions: [
+        "Payment to be made in full before course commencement",
+        "Installment options available for selected courses (with minimal processing fee)",
+        "GST @ 18% applicable on all training services",
+        "All prices subject to change as per government regulations",
+        "Proper Tax Invoice (with GSTIN) will be issued",
+        "Payment Methods: UPI, Bank Transfer, Card, Cash (offline)"
       ]
     }
   },
   {
     title: "Automotive Design Mastery",
     description: "Advanced automotive design techniques for professional-level projects and industry applications.",
-    duration: "16 Weeks",
+    duration: "60 Days (120 hrs)",
     level: "Advanced",
     students: "1,800+",
     image: "/lovable-uploads/863fc5c4-e705-4d27-994f-0836033f1473.png",
-    price: "",
+    price: "₹37,760",
     detailedInfo: {
       overview: "Take your automotive design skills to the professional level with advanced techniques, complex projects, and industry-relevant methodologies used by leading automotive companies worldwide.",
       features: [
@@ -196,17 +254,32 @@ export const popularCourses: PopularCourse[] = [
         "Week 9-12: Major Design Project - Complete Vehicle Component",
         "Week 13-14: Professional Presentation and Documentation",
         "Week 15-16: Industry Collaboration Project"
+      ],
+      investment: "₹37,760 (Base Fee: ₹32,000 + GST: ₹5,760) - Hybrid Mode",
+      additionalCharges: {
+        registrationFee: "₹500 (One-time, non-refundable)",
+        courseMaterials: "₹1,000 - ₹2,000 (Offline courses)",
+        certification: "Included in course fee",
+        softwareLicense: "Shared/student version provided"
+      },
+      termsAndConditions: [
+        "Payment to be made in full before course commencement",
+        "Installment options available for selected courses (with minimal processing fee)",
+        "GST @ 18% applicable on all training services",
+        "All prices subject to change as per government regulations",
+        "Proper Tax Invoice (with GSTIN) will be issued",
+        "Payment Methods: UPI, Bank Transfer, Card, Cash (offline)"
       ]
     }
   },
   {
     title: "SolidWorks Professional",
     description: "Complete SolidWorks training from basics to advanced modeling, simulation, and design validation.",
-    duration: "10 Weeks",
+    duration: "45 Days (90 hrs)",
     level: "Intermediate",
     students: "3,200+",
     image: "/lovable-uploads/8b6ca308-d4a2-44a4-9127-672c98e09620.png",
-    price: "",
+    price: "₹29,500",
     detailedInfo: {
       overview: "Master SolidWorks from fundamentals to advanced features. This comprehensive course covers all aspects of SolidWorks including part modeling, assembly design, drawing creation, and simulation.",
       features: [
@@ -234,17 +307,32 @@ export const popularCourses: PopularCourse[] = [
         "Week 8: Simulation and Analysis Basics",
         "Week 9: Advanced Projects",
         "Week 10: Certification Preparation"
+      ],
+      investment: "₹29,500 (Base Fee: ₹25,000 + GST: ₹4,500) - Hybrid Mode",
+      additionalCharges: {
+        registrationFee: "₹500 (One-time, non-refundable)",
+        courseMaterials: "₹1,000 - ₹2,000 (Offline courses)",
+        certification: "Included in course fee",
+        softwareLicense: "Shared/student version provided"
+      },
+      termsAndConditions: [
+        "Payment to be made in full before course commencement",
+        "Installment options available for selected courses (with minimal processing fee)",
+        "GST @ 18% applicable on all training services",
+        "All prices subject to change as per government regulations",
+        "Proper Tax Invoice (with GSTIN) will be issued",
+        "Payment Methods: UPI, Bank Transfer, Card, Cash (offline)"
       ]
     }
   },
   {
     title: "CATIA V5/V6 Mastery",
     description: "Comprehensive CATIA training for aerospace and automotive industries with real-world projects.",
-    duration: "14 Weeks",
+    duration: "45 Days (90 hrs)",
     level: "Advanced",
     students: "1,500+",
     image: "/lovable-uploads/81aed992-67ef-4f33-a0ba-a79be45d6687.png",
-    price: "",
+    price: "₹29,500",
     detailedInfo: {
       overview: "Master CATIA V5 and V6 for aerospace and automotive applications. This advanced course covers all major workbenches and prepares you for professional roles in leading aerospace and automotive companies.",
       features: [
@@ -270,17 +358,32 @@ export const popularCourses: PopularCourse[] = [
         "Week 11-12: Advanced Simulation and Analysis",
         "Week 13: Industry-Specific Projects",
         "Week 14: Certification Preparation and Portfolio Review"
+      ],
+      investment: "₹29,500 (Base Fee: ₹25,000 + GST: ₹4,500) - Hybrid Mode",
+      additionalCharges: {
+        registrationFee: "₹500 (One-time, non-refundable)",
+        courseMaterials: "₹1,000 - ₹2,000 (Offline courses)",
+        certification: "Included in course fee",
+        softwareLicense: "Shared/student version provided"
+      },
+      termsAndConditions: [
+        "Payment to be made in full before course commencement",
+        "Installment options available for selected courses (with minimal processing fee)",
+        "GST @ 18% applicable on all training services",
+        "All prices subject to change as per government regulations",
+        "Proper Tax Invoice (with GSTIN) will be issued",
+        "Payment Methods: UPI, Bank Transfer, Card, Cash (offline)"
       ]
     }
   },
   {
     title: "3D Printing & Prototyping",
     description: "Learn rapid prototyping techniques, 3D modeling for printing, and advanced manufacturing methods.",
-    duration: "8 Weeks",
+    duration: "5 Days (15 hrs)",
     level: "Beginner",
     students: "2,100+",
     image: "/lovable-uploads/04355239-8765-46db-aaa9-02bb2e6fd1c6.png",
-    price: "",
+    price: "₹7,080",
     detailedInfo: {
       overview: "Dive into the world of 3D printing and rapid prototyping. Learn to design for additive manufacturing, understand different 3D printing technologies, and master the complete prototyping workflow.",
       features: [
@@ -298,49 +401,74 @@ export const popularCourses: PopularCourse[] = [
         "Knowledge of emerging additive manufacturing technologies"
       ],
       curriculum: [
-        "Week 1: 3D Printing Technologies and Applications",
-        "Week 2: Design for Additive Manufacturing",
-        "Week 3: 3D Modeling for Printing",
-        "Week 4: Printer Operation and Maintenance",
-        "Week 5: Materials and Print Settings Optimization",
-        "Week 6: Post-Processing and Finishing",
-        "Week 7: Advanced Techniques and Multi-Material Printing",
-        "Week 8: Final Project and Portfolio Development"
+        "Day 1: 3D Printing Technologies and Applications Overview",
+        "Day 2: Design for Additive Manufacturing Principles",
+        "Day 3: Hands-on 3D Modeling and Printer Operation",
+        "Day 4: Materials, Settings Optimization & Post-Processing",
+        "Day 5: Advanced Techniques and Project Completion"
+      ],
+      investment: "₹7,080 (Base Fee: ₹6,000 + GST: ₹1,080) - Offline Mode",
+      additionalCharges: {
+        registrationFee: "₹500 (One-time, non-refundable)",
+        courseMaterials: "₹1,000 - ₹2,000 (Offline courses)",
+        certification: "Included in course fee",
+        softwareLicense: "Shared/student version provided"
+      },
+      termsAndConditions: [
+        "Payment to be made in full before course commencement",
+        "Installment options available for selected courses (with minimal processing fee)",
+        "GST @ 18% applicable on all training services",
+        "All prices subject to change as per government regulations",
+        "Proper Tax Invoice (with GSTIN) will be issued",
+        "Payment Methods: UPI, Bank Transfer, Card, Cash (offline)"
       ]
     }
   },
   {
-    title: "CNC Programming Excellence",
+    title: "Product Design & Prototyping",
     description: "Master CNC programming, toolpath optimization, and advanced machining techniques for precision manufacturing.",
-    duration: "12 Weeks",
+    duration: "40 Days (80 hrs)",
     level: "Intermediate",
     students: "1,900+",
     image: "/lovable-uploads/81aed992-67ef-4f33-a0ba-a79be45d6687.png",
-    price: "",
+    price: "₹33,040",
     detailedInfo: {
-      overview: "Master CNC programming from fundamentals to advanced techniques. Learn G-code programming, CAM software operation, and precision machining strategies used in modern manufacturing.",
+      overview: "Master product design and prototyping from concept to manufacturing. Learn advanced techniques for precision manufacturing and product development lifecycle.",
       features: [
-        "Complete G-code programming mastery",
-        "Advanced CAM software training (Mastercam/Fusion 360)",
-        "Toolpath optimization and machining strategies",
-        "CNC machine setup and operation",
+        "Complete product design lifecycle management",
+        "Advanced prototyping techniques and methodologies",
+        "Material selection and testing procedures",
+        "Manufacturing process optimization",
         "Quality control and precision measurement",
-        "Advanced machining techniques and troubleshooting"
+        "Advanced manufacturing techniques and troubleshooting"
       ],
       benefits: [
-        "Industry-recognized CNC programming certification",
-        "Hands-on experience with professional CNC machines",
+        "Industry-recognized product design certification",
+        "Hands-on experience with professional equipment",
         "Job placement assistance in manufacturing companies",
-        "Understanding of modern manufacturing processes"
+        "Understanding of modern product development processes"
       ],
       curriculum: [
-        "Week 1-2: CNC Fundamentals and G-code Basics",
-        "Week 3-4: CAM Software Operation and Setup",
-        "Week 5-6: Milling Operations and Toolpath Strategies",
-        "Week 7-8: Turning Operations and Lathe Programming",
-        "Week 9-10: Advanced Machining and Multi-Axis Programming",
-        "Week 11: Quality Control and Precision Measurement",
-        "Week 12: Final Project and Industry Certification"
+        "Week 1-2: Product Design Fundamentals and Concept Development",
+        "Week 3-4: Prototyping Methods and Material Selection",
+        "Week 5-6: Advanced Manufacturing Techniques",
+        "Week 7-8: Quality Control and Testing Validation",
+        "Week 9-10: Final Project and Industry Certification"
+      ],
+      investment: "₹33,040 (Base Fee: ₹28,000 + GST: ₹5,040) - Hybrid Mode",
+      additionalCharges: {
+        registrationFee: "₹500 (One-time, non-refundable)",
+        courseMaterials: "₹1,000 - ₹2,000 (Offline courses)",
+        certification: "Included in course fee",
+        softwareLicense: "Shared/student version provided"
+      },
+      termsAndConditions: [
+        "Payment to be made in full before course commencement",
+        "Installment options available for selected courses (with minimal processing fee)",
+        "GST @ 18% applicable on all training services",
+        "All prices subject to change as per government regulations",
+        "Proper Tax Invoice (with GSTIN) will be issued",
+        "Payment Methods: UPI, Bank Transfer, Card, Cash (offline)"
       ]
     }
   }
