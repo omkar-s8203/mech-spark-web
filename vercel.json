@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "http"
+        }
+      ],
+      "destination": "https://www.decouvertes.in/$1",
+      "permanent": true
+    }
+  ]
+}
