@@ -12,7 +12,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-3">
-              <img src="/lovable-uploads/a9876d48-9b70-4e24-bf90-5350a2500522.png" alt="Website Logo" className="w-10 h-10" />
+              <img src="/lovable-uploads/a9876d48-9b70-4e24-bf90-5350a2500522.png" alt="Website Logo" className="w-16 h-16" />
               <div className="text-center">
                 <h1 className="text-xl font-bold text-gray-900">Decouvertes</h1>
                 <p className="text-xs text-blue-600 font-magnolia">The Art Of India</p>

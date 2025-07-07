@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 // const testimonials = [
 //   {
@@ -100,44 +101,50 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={testimonial.id} className="hover:shadow-lg transition-shadow duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <CardContent className="p-6">
-                {/* Quote Icon */}
-                <div className="mb-4">
-                  <Quote className="h-6 w-6 text-orange-500" />
-                </div>
+        {/* Testimonials Carousel */}
+        <Carousel className="w-full max-w-6xl mx-auto">
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={testimonial.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <Card className="hover:shadow-lg transition-shadow duration-300 animate-fade-in h-full" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <CardContent className="p-6 flex flex-col h-full">
+                    {/* Quote Icon */}
+                    <div className="mb-4">
+                      <Quote className="h-6 w-6 text-orange-500" />
+                    </div>
 
-                {/* Rating */}
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                  ))}
-                </div>
+                    {/* Rating */}
+                    <div className="flex mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
 
-                {/* Content */}
-                <p className="text-gray-700 mb-6 text-sm leading-relaxed">
-                  "{testimonial.content}"
-                </p>
+                    {/* Content */}
+                    <p className="text-gray-700 mb-6 text-sm leading-relaxed flex-grow">
+                      "{testimonial.content}"
+                    </p>
 
-                {/* Author */}
-                <div>
-                  <h4 className="font-semibold text-gray-900 text-sm">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-gray-600 text-xs">
-                    {testimonial.role}
-                  </p>
-                  <p className="text-gray-500 text-xs">
-                    {testimonial.company}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                    {/* Author */}
+                    <div className="mt-auto">
+                      <h4 className="font-semibold text-gray-900 text-sm">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-gray-600 text-xs">
+                        {testimonial.role}
+                      </p>
+                      <p className="text-gray-500 text-xs">
+                        {testimonial.company}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
 
         {/* Call to Action */}
         
