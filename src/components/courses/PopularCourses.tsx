@@ -1,13 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Book, Users, Settings, CheckCircle, Star, Clock, Award } from 'lucide-react';
-import { popularCourses } from './CourseData';
+import { supabase } from '@/integrations/supabase/client';
+
+interface Course {
+  id: string;
+  title: string;
+  description: string;
+  image_url: string;
+  category: string;
+  duration: string;
+  level: string;
+  price: number;
+  is_popular: boolean;
+}
 
 const PopularCourses = () => {
+  const [courses, setCourses] = useState<Course[]>([]);
+
+  useEffect(() => {
+    fetchCourses();
+  }, []);
+
+  const fetchCourses = async () => {
+    const { data, error } = await supabase
+      .from('courses')
+      .select('*')
+      .eq('is_popular', true)
+      .order('created_at', { ascending: false });
+    
+    if (!error && data) {
+      setCourses(data);
+    }
+  };
+
   return (
     <div className="mb-20">
       <div className="text-center mb-12 animate-fade-in">
@@ -28,15 +58,15 @@ const PopularCourses = () => {
         className="w-full"
       >
         <CarouselContent className="-ml-2 md:-ml-4">
-          {popularCourses.map((course, index) => (
+          {courses.map((course, index) => (
             <CarouselItem
-              key={index}
+              key={course.id}
               className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
             >
               <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 h-full group hover:scale-105">
                 <div className="h-48 relative overflow-hidden">
                   <img 
-                    src={course.image} 
+                    src={course.image_url || '/placeholder.svg'} 
                     alt={course.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -47,7 +77,7 @@ const PopularCourses = () => {
                         {course.level}
                       </Badge>
                       <span className="text-white font-bold text-lg animate-fade-in">
-                        {course.price}
+                        ${course.price}
                       </span>
                     </div>
                     <h4 className="text-xl font-bold text-white">{course.title}</h4>
@@ -59,7 +89,7 @@ const PopularCourses = () => {
                   </p>
                   <div className="flex justify-between items-center mb-6 text-sm text-gray-500">
                     <span>⏱️ {course.duration}</span>
-                    <span>👥 {course.students} students</span>
+                    <span>📚 {course.category}</span>
                   </div>
                   <div className="flex gap-2">
                     <a
@@ -85,7 +115,7 @@ const PopularCourses = () => {
                             {course.title}
                           </DialogTitle>
                           <DialogDescription className="text-lg text-gray-600 mt-2">
-                            {course.detailedInfo.overview}
+                            {course.description}
                           </DialogDescription>
                         </DialogHeader>
                         
@@ -97,9 +127,9 @@ const PopularCourses = () => {
                             <div className="text-gray-600 text-sm">{course.duration}</div>
                           </div>
                           <div className="bg-blue-50 p-4 rounded-lg text-center">
-                            <Users className="h-6 w-6 text-blue-500 mx-auto mb-2" />
-                            <div className="font-semibold text-gray-900">Students</div>
-                            <div className="text-gray-600 text-sm">{course.students}</div>
+                            <Book className="h-6 w-6 text-blue-500 mx-auto mb-2" />
+                            <div className="font-semibold text-gray-900">Category</div>
+                            <div className="text-gray-600 text-sm">{course.category}</div>
                           </div>
                           <div className="bg-green-50 p-4 rounded-lg text-center">
                             <Star className="h-6 w-6 text-green-500 mx-auto mb-2" />
@@ -108,64 +138,10 @@ const PopularCourses = () => {
                           </div>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-6 mt-6">
-                          {/* Features Section */}
-                          <div>
-                            <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                              <Settings className="h-5 w-5" />
-                              Course Features
-                            </h4>
-                            <ul className="space-y-2">
-                              {course.detailedInfo.features.map((feature, idx) => (
-                                <li key={idx} className="flex items-start gap-2 text-gray-600">
-                                  <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                                  <span className="text-sm">{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Benefits Section */}
-                          <div>
-                            <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                              <Star className="h-5 w-5" />
-                              Benefits
-                            </h4>
-                            <ul className="space-y-2">
-                              {course.detailedInfo.benefits.map((benefit, idx) => (
-                                <li key={idx} className="flex items-start gap-2 text-gray-600">
-                                  <CheckCircle className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
-                                  <span className="text-sm">{benefit}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-
-                        {/* Curriculum Section */}
-                        <div className="mt-6">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                            <Book className="h-5 w-5" />
-                            Course Curriculum
-                          </h4>
-                          <div className="bg-gray-50 rounded-lg p-4">
-                            <ul className="space-y-2">
-                              {course.detailedInfo.curriculum.map((item, idx) => (
-                                <li key={idx} className="flex items-start gap-2 text-gray-600">
-                                  <div className="w-6 h-6 rounded-full bg-orange-100 text-orange-600 text-xs flex items-center justify-center font-semibold mt-0.5 flex-shrink-0">
-                                    {idx + 1}
-                                  </div>
-                                  <span className="text-sm">{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-
                         {/* Price and Action Buttons */}
                         <div className="flex items-center justify-between mt-6 p-4 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-lg">
                           <div>
-                            <div className="text-2xl font-bold text-gray-900">{course.price}</div>
+                            <div className="text-2xl font-bold text-gray-900">${course.price}</div>
                             <div className="text-sm text-gray-600">One-time payment</div>
                           </div>
                           <div className="flex gap-3">
