@@ -50,8 +50,7 @@ const testimonials = [
     role: "Product Manager",
     company: "NextGen Solutions Pvt. Ltd.",
     content: "Decouvertes transformed our product development process. Their expertise in 3D modeling and prototyping helped us bring our vision to life faster than expected.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
+    rating: 5
   },
   {
     id: 2,
@@ -59,8 +58,7 @@ const testimonials = [
     role: "Engineering Director",
     company: "Bharat Precision Tech",
     content: "The training programs at Decouvertes are exceptional. Our team gained valuable skills in CAD design and mechanical engineering that directly improved our project outcomes.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1603415526960-f8f0a1f2b0c5?w=150&h=150&fit=crop&crop=face"
+    rating: 5
   },
   {
     id: 3,
@@ -68,8 +66,7 @@ const testimonials = [
     role: "Startup Founder",
     company: "InnovateKaro",
     content: "From concept to prototype, Decouvertes guided us through every step. Their R&D services and 3D printing capabilities were crucial for our product launch.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&h=150&fit=crop&crop=face"
+    rating: 5
   },
   {
     id: 4,
@@ -77,8 +74,15 @@ const testimonials = [
     role: "Design Engineer",
     company: "Shakti Manufacturing Co.",
     content: "The courses offered by Decouvertes are practical and industry-relevant. I learned advanced CAD techniques that I use daily in my professional work.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=150&h=150&fit=crop&crop=face"
+    rating: 5
+  },
+  {
+    id: 5,
+    name: "Pratik Devkatte",
+    role: "Student",
+    company: "Bharati Vidyapeeth University College of Engineering Pune",
+    content: "Glad that i have chosen decouvertes for my CAD training. Sivam sir has taught us in detail and practical application based situations which were very helpful in matching the industrial designs. Along with Solidworks and Catia he also taught us GD&T and provided with some extra knowledge and guidance. I highly recommend everyone shivam soni sir over other big institutes or classes for their upskilling in design softwares.",
+    rating: 5
   }
 ];
 
@@ -97,7 +101,7 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {testimonials.map((testimonial, index) => (
             <Card key={testimonial.id} className="hover:shadow-lg transition-shadow duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <CardContent className="p-6">
@@ -119,23 +123,16 @@ const Testimonials = () => {
                 </p>
 
                 {/* Author */}
-                <div className="flex items-center">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <h4 className="font-semibold text-gray-900 text-sm">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-gray-600 text-xs">
-                      {testimonial.role}
-                    </p>
-                    <p className="text-gray-500 text-xs">
-                      {testimonial.company}
-                    </p>
-                  </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-sm">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-gray-600 text-xs">
+                    {testimonial.role}
+                  </p>
+                  <p className="text-gray-500 text-xs">
+                    {testimonial.company}
+                  </p>
                 </div>
               </CardContent>
             </Card>
