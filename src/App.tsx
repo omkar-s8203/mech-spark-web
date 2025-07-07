@@ -9,7 +9,6 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
-import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 
@@ -45,7 +44,6 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

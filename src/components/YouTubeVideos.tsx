@@ -1,38 +1,63 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { Play, Calendar, Eye, Clock, ExternalLink } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
 
-interface Video {
-  id: string;
-  title: string;
-  description: string;
-  video_id: string;
-  thumbnail_url: string;
-  duration: string;
-}
+// Real video data from Decouvertes YouTube channel
+const channelVideos = [
+  {
+    id: 'u-QqkjXlWTc',
+    title: 'Workshop - Your Future in Design & Engineering Session 1!',
+    description: 'Join us for an insightful workshop session about your future in design and engineering. Learn about career opportunities, skill development, and industry insights.',
+    thumbnail: 'https://img.youtube.com/vi/u-QqkjXlWTc/maxresdefault.jpg',
+    duration: '16:20',
+    views: '21',
+    publishedAt: '2024-01-15',
+    category: 'Workshop'
+  },
+  {
+    id: '3Ol_YTMPmn4',
+    title: 'Wake Up the Power - Official Music Video | Motivational Song for Students & Professional',
+    description: 'An inspiring motivational music video designed to energize students and professionals. Wake up your inner power and achieve your goals.',
+    thumbnail: 'https://img.youtube.com/vi/3Ol_YTMPmn4/maxresdefault.jpg',
+    duration: '3:05',
+    views: '32',
+    publishedAt: '2024-01-15',
+    category: 'Motivation'
+  },
+  {
+    id: 'haZm0pwzOR4',
+    title: 'Decouvertes Anthem | Official Company Theme',
+    description: 'The official anthem and company theme of Decouvertes Future Tech. Experience our vision, mission, and values through this inspiring theme.',
+    thumbnail: 'https://img.youtube.com/vi/haZm0pwzOR4/maxresdefault.jpg',
+    duration: '1:51',
+    views: '35',
+    publishedAt: '2024-01-15',
+    category: 'Company'
+  },
+  {
+    id: 'sVzQRjkA54s',
+    title: 'Decouvertes Future Tech Intro',
+    description: 'Introduction to Decouvertes Future Tech - your partner in product development, 3D printing, and engineering solutions.',
+    thumbnail: 'https://img.youtube.com/vi/sVzQRjkA54s/maxresdefault.jpg',
+    duration: '1:39',
+    views: '30',
+    publishedAt: '2024-01-15',
+    category: 'Company'
+  }
+];
+
+const categories = ['All', 'Workshop', 'Motivation', 'Company'];
 
 const YouTubeVideos = () => {
-  const [videos, setVideos] = useState<Video[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchVideos();
-  }, []);
-
-  const fetchVideos = async () => {
-    const { data, error } = await supabase
-      .from('youtube_videos')
-      .select('*')
-      .order('created_at', { ascending: false });
-    
-    if (!error && data) {
-      setVideos(data);
-    }
-  };
+  const filteredVideos = selectedCategory === 'All' 
+    ? channelVideos 
+    : channelVideos.filter(video => video.category === selectedCategory);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -72,13 +97,32 @@ const YouTubeVideos = () => {
           </Button>
         </div>
 
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant={selectedCategory === category ? "default" : "outline"}
+              onClick={() => setSelectedCategory(category)}
+              className={`
+                ${selectedCategory === category 
+                  ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white" 
+                  : "hover:bg-gray-100"
+                }
+              `}
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
+
         {/* Videos Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {videos.map((video) => (
+          {filteredVideos.map((video) => (
             <Card key={video.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="relative">
                 <img 
-                  src={video.thumbnail_url || `https://img.youtube.com/vi/${video.video_id}/maxresdefault.jpg`} 
+                  src={video.thumbnail} 
                   alt={video.title}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -88,7 +132,7 @@ const YouTubeVideos = () => {
                       <Button 
                         size="lg" 
                         className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-red-600 hover:bg-red-700 text-white rounded-full"
-                        onClick={() => setSelectedVideo(video.video_id)}
+                        onClick={() => setSelectedVideo(video.id)}
                       >
                         <Play className="h-6 w-6" />
                       </Button>
@@ -101,7 +145,7 @@ const YouTubeVideos = () => {
                         <iframe
                           width="100%"
                           height="100%"
-                          src={`https://www.youtube.com/embed/${video.video_id}`}
+                          src={`https://www.youtube.com/embed/${video.id}`}
                           title={video.title}
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -121,6 +165,11 @@ const YouTubeVideos = () => {
               </div>
 
               <CardHeader>
+                <div className="flex items-center justify-between mb-2">
+                  <Badge className={getCategoryColor(video.category)}>
+                    {video.category}
+                  </Badge>
+                </div>
                 <CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
                   {video.title}
                 </CardTitle>
@@ -130,6 +179,17 @@ const YouTubeVideos = () => {
                 <CardDescription className="text-gray-600 mb-4 line-clamp-3">
                   {video.description}
                 </CardDescription>
+                
+                <div className="flex items-center justify-between text-sm text-gray-500">
+                  <div className="flex items-center">
+                    <Eye className="h-4 w-4 mr-1" />
+                    {video.views} views
+                  </div>
+                  <div className="flex items-center">
+                    <Calendar className="h-4 w-4 mr-1" />
+                    {formatDate(video.publishedAt)}
+                  </div>
+                </div>
               </CardContent>
             </Card>
           ))}
