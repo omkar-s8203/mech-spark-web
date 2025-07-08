@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import AboutUs from '@/components/AboutUs';
 import Services from '@/components/Services';
 import Courses from '@/components/Courses';
 import YouTubeVideos from '@/components/YouTubeVideos';
@@ -13,6 +14,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <AboutUs />
       <Services />
       <Courses />
       <YouTubeVideos />
