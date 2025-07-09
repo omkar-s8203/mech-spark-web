@@ -50,33 +50,36 @@ const testimonials = [
     name: "Priya Mehra",
     role: "Product Manager",
     company: "NextGen Solutions Pvt. Ltd.",
-    content: "Decouvertes transformed our product development process. Their expertise in 3D modeling and prototyping helped us bring our vision to life faster than expected.",
+    content: "Decouvertes completely transformed our entire product development journey. With their deep expertise in 3D modeling, rapid prototyping, and practical design thinking, we were able to bring our ideas to life much faster than we had imagined. The team was responsive, skilled, and provided valuable insights at every stage. Their support made a big impact on our timelines and outcomes. Highly recommend Decouvertes for any design or prototyping needs!",
     rating: 5
   },
   {
-    id: 2,
-    name: "Ravi Shankar",
-    role: "Engineering Director",
-    company: "Bharat Precision Tech",
-    content: "The training programs at Decouvertes are exceptional. Our team gained valuable skills in CAD design and mechanical engineering that directly improved our project outcomes.",
-    rating: 5
-  },
+  id: 2,
+  name: "Ravi Shankar",
+  role: "Engineering Director",
+  company: "Bharat Precision Tech",
+  content: "The training programs at Decouvertes are truly exceptional. Our engineering team received in-depth, hands-on instruction in CAD design, mechanical principles, and practical industrial applications. The real-world approach they follow helped our staff quickly adapt the new skills into our ongoing projects. We’ve already seen measurable improvements in both quality and turnaround time. I highly recommend Decouvertes for companies looking to upskill their technical teams with modern and industry-relevant training.",
+  rating: 5
+},
+
   {
-    id: 3,
-    name: "Anjali Nair",
-    role: "Startup Founder",
-    company: "InnovateKaro",
-    content: "From concept to prototype, Decouvertes guided us through every step. Their R&D services and 3D printing capabilities were crucial for our product launch.",
-    rating: 5
-  },
+  id: 3,
+  name: "Anjali Nair",
+  role: "Startup Founder",
+  company: "InnovateKaro",
+  content: "From concept to prototype, Decouvertes guided us through every step with expertise and dedication. Their advanced R&D services, product design consultation, and high-quality 3D printing capabilities played a pivotal role in accelerating our product launch. The team was responsive, insightful, and committed to delivering precision at every stage. I genuinely recommend Decouvertes to any startup looking to turn an innovative idea into a market-ready product efficiently.",
+  rating: 5
+},
+
   {
-    id: 4,
-    name: "Amit Verma",
-    role: "Design Engineer",
-    company: "Shakti Manufacturing Co.",
-    content: "The courses offered by Decouvertes are practical and industry-relevant. I learned advanced CAD techniques that I use daily in my professional work.",
-    rating: 5
-  },
+  id: 4,
+  name: "Amit Verma",
+  role: "Design Engineer",
+  company: "Shakti Manufacturing Co.",
+  content: "The courses offered by Decouvertes are practical, detailed, and highly relevant to real-world industry applications. I gained hands-on experience with advanced CAD techniques, which I now apply daily in my professional role. The instructors are knowledgeable and focus on teaching design methods aligned with current manufacturing practices. I strongly recommend Decouvertes to anyone looking to improve their technical skill set in mechanical design and CAD systems.",
+  rating: 5
+},
+
   {
     id: 5,
     name: "Pratik Devkatte",

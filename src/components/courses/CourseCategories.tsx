@@ -101,12 +101,38 @@ const CourseCategories = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 mt-6">
-                  <Button className="flex-1 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
+                  {/* <Button className="flex-1 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
                     Get Started
                   </Button>
                   <Button variant="outline" className="flex-1">
                     Contact Us
-                  </Button>
+                  </Button> */}
+
+<a
+  href="https://forms.office.com/pages/responsepage.aspx?id=cpI_UU89MUK70POr5eGJmUbbiGhA5edDmeo4pIAKe-pUQUgwTDQ0MExEOUpNOU5JWEU3UU5QTk5GSi4u&route=shorturl"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex-1"
+>
+  <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600">
+    Get Started
+  </Button>
+</a>
+
+
+<a
+  href="https://wa.me/919561103435?text=Hello%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20courses!"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex-1"
+>
+  <Button variant="outline" className="w-full">
+    Contact Us
+  </Button>
+</a>
+
+
+
                 </div>
               </DialogContent>
             </Dialog>
