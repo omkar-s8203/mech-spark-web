@@ -9,16 +9,43 @@ const Header = () => {
     <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <a href="/" className="flex items-center space-x-3">
-              <img src="/lovable-uploads/a9876d48-9b70-4e24-bf90-5350a2500522.png" alt="Website Logo" className="w-16 h-16" />
-              <div className="text-center">
-                <h1 className="text-xl font-bold text-gray-900">Decouvertes</h1>
-                <p className="text-xs text-blue-600 font-magnolia">The Art Of India</p>
-              </div>
-            </a>
-          </div>
+
+
+          {/* Logo and Title */}
+          {/* <div className="flex items-center space-x-3">
+            <img
+              src="/lovable-uploads/logo.png"
+              alt="Website Logo"
+              className="w-10 h-10 object-contain"
+            />
+            <div className="leading-tight">
+              <h1 className="text-xl font-bold text-gray-900">Decouvertes</h1>
+              <p className="text-xs text-blue-600 font-magnolia">The Art Of India</p>
+            </div>
+          </div> */}
+
+          <div className="flex items-center gap-5">
+  {/* Logo Box (matches your sketch) */}
+  <div className="w-16 h-16 bg-white rounded-md shadow-sm flex items-center justify-center">
+    <img
+      src="/lovable-uploads/logo.png"
+      alt="Website Logo"
+      className="w-12 h-12 object-contain"
+    />
+  </div>
+
+  {/* Text Block */}
+  <div className="flex flex-col justify-center leading-tight">
+    <h1 className="text-2xl font-bold text-gray-900">Decouvertes</h1>
+    <p className="text-sm text-blue-600 font-magnolia">The Art Of India</p>
+  </div>
+</div>
+
+
+
+ 
+
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
@@ -95,7 +122,7 @@ const Header = () => {
               >
                 Contact
               </a>
-              
+
               <div className="flex flex-col space-y-2 px-3 py-4">
                 <a href="https://decouvertes.trainercentralsite.in/#/login" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="w-full hover:bg-orange-50 hover:border-orange-500">
