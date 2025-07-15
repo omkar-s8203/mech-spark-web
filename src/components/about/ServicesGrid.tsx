@@ -45,17 +45,13 @@ const ServicesGrid: React.FC<ServicesGridProps> = ({
         {services.map((service, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 50, rotateY: -10 }}
-            animate={{ opacity: 1, y: 0, rotateY: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.8 }}
             whileHover={{ 
               scale: 1.05,
               rotateY: 5,
-              z: 50,
             }}
             whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.3 }}
             className="group cursor-pointer"
-            style={{ perspective: "1000px" }}
           >
             <Card className={`h-full border-0 bg-gradient-to-br ${service.bgGradient} hover:shadow-2xl transition-all duration-500 overflow-hidden relative`}>
               <CardContent className="p-8">
