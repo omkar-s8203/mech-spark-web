@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Settings, Code, Image, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
 import ServicePopupContent from './ServicePopupContent';
 
 const Services = () => {
@@ -317,17 +318,27 @@ Contact us today for course details and enrollment!`
                 </CardDescription>
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button className={`bg-gradient-to-r ${service.gradient} hover:opacity-90 transition-opacity`}>
+                    <Button className={`bg-gradient-to-r ${service.gradient} hover:opacity-90 hover:scale-105 hover:shadow-lg transition-all duration-300`}>
                       Learn More
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
                     <DialogHeader>
                       <DialogTitle className="text-2xl font-bold text-gray-900 flex items-center">
-                        <div className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${service.gradient} text-white mr-3`}>
+                        <motion.div 
+                          className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${service.gradient} text-white mr-3`}
+                          whileHover={{ rotate: 360, scale: 1.1 }}
+                          transition={{ duration: 0.6 }}
+                        >
                           {service.icon}
-                        </div>
-                        {service.title}
+                        </motion.div>
+                        <motion.span
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.2 }}
+                        >
+                          {service.title}
+                        </motion.span>
                       </DialogTitle>
                     </DialogHeader>
                     <ServicePopupContent title={service.title} gradient={service.gradient} />

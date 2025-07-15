@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import PrivacyPolicyModal from '@/components/PrivacyPolicyModal';
 import TermsOfServiceModal from '@/components/TermsOfServiceModal';
@@ -249,42 +250,75 @@ const Footer = () => {
         </div>
       </footer>
 
-      {/* Webinar Registration Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
-          <div className="bg-white rounded-xl shadow-xl w-[90%] md:w-[600px] h-[80%] p-4 relative">
-            {/* Close button */}
-            <button
-              onClick={closeForm}
-              className="absolute top-3 right-3 text-gray-600 hover:text-red-500 text-xl font-bold"
-              aria-label="Close modal"
+      <AnimatePresence>
+        {/* Webinar Registration Modal */}
+        {isModalOpen && (
+          <motion.div 
+            className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div 
+              className="bg-white rounded-xl shadow-2xl w-[90%] md:w-[600px] h-[80%] p-4 relative overflow-hidden"
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ type: "spring", damping: 20, stiffness: 300 }}
             >
-              &times;
-            </button>
-            {/* Embedded webinar registration form */}
-            <iframe
-              src="https://decouvertes.trainercentralsite.in/course/free-workshop-kickstart-your-future-in-design-engineering#/home "
-              width="100%"
-              height="100%"
-              allowFullScreen
-              className="rounded-lg border-0"
-              title="Webinar Registration Form"
-            />
-          </div>
-        </div>
-      )}
+              {/* Animated background */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-orange-50 opacity-60"
+                animate={{
+                  backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+              
+              {/* Close button */}
+              <motion.button
+                onClick={closeForm}
+                className="absolute top-3 right-3 text-gray-600 hover:text-red-500 hover:bg-red-50 rounded-full p-2 text-xl font-bold z-10 transition-all duration-300"
+                aria-label="Close modal"
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                &times;
+              </motion.button>
+              
+              {/* Embedded webinar registration form */}
+              <motion.iframe
+                src="https://decouvertes.trainercentralsite.in/course/free-workshop-kickstart-your-future-in-design-engineering#/home "
+                width="100%"
+                height="100%"
+                allowFullScreen
+                className="rounded-lg border-0 relative z-10"
+                title="Webinar Registration Form"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              />
+            </motion.div>
+          </motion.div>
+        )}
 
-      {/* Privacy Policy Modal */}
-      <PrivacyPolicyModal 
-        isOpen={isPrivacyModalOpen} 
-        onClose={closePrivacyModal} 
-      />
+        {/* Privacy Policy Modal */}
+        <PrivacyPolicyModal 
+          isOpen={isPrivacyModalOpen} 
+          onClose={closePrivacyModal} 
+        />
 
-      {/* Terms of Service Modal */}
-      <TermsOfServiceModal 
-        isOpen={isTermsModalOpen} 
-        onClose={closeTermsModal} 
-      />
+        {/* Terms of Service Modal */}
+        <TermsOfServiceModal 
+          isOpen={isTermsModalOpen} 
+          onClose={closeTermsModal} 
+        />
+      </AnimatePresence>
     </>
   );
 };
