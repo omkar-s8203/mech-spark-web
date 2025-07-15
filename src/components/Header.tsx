@@ -26,8 +26,8 @@ const Header = () => {
           </div> */}
 
           <div className="flex items-center gap-5">
-  {/* Logo Box (matches your sketch) */}
-  <div className="w-16 h-16 bg-card rounded-md shadow-sm border flex items-center justify-center">
+  {/* Logo */}
+  <div className="flex items-center justify-center">
     <img
       src="/lovable-uploads/logo.png"
       alt="Website Logo"

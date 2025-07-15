@@ -55,9 +55,25 @@ const ServicesGrid: React.FC<ServicesGridProps> = ({
           >
             <Card className={`h-full border-0 bg-gradient-to-br ${service.bgGradient} hover:shadow-2xl transition-all duration-500 overflow-hidden relative`}>
               <CardContent className="p-8">
-                {/* Hover overlay */}
+                {/* Hover overlay with animated particles */}
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                />
+                <motion.div
+                  className="absolute top-4 left-4 w-2 h-2 bg-primary/40 rounded-full opacity-0 group-hover:opacity-100"
+                  animate={{
+                    scale: [1, 1.5, 1],
+                    opacity: [0.4, 1, 0.4],
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <motion.div
+                  className="absolute bottom-4 right-4 w-3 h-3 bg-secondary/40 rounded-full opacity-0 group-hover:opacity-100"
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    opacity: [0.3, 0.8, 0.3],
+                  }}
+                  transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
                 />
 
                 {/* Animated Icon */}
@@ -65,11 +81,29 @@ const ServicesGrid: React.FC<ServicesGridProps> = ({
                   whileHover={{ 
                     rotate: [0, -10, 10, 0],
                     scale: 1.1,
+                    boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
                   }}
                   transition={{ duration: 0.6 }}
                   className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${service.gradient} text-white mb-6 shadow-lg cursor-pointer relative z-10`}
+                  animate={{
+                    y: [0, -2, 0],
+                  }}
+                  // @ts-ignore
+                  style={{
+                    transition: "all 0.3s ease",
+                  }}
+                  onHoverStart={() => {
+                    // Add floating animation on hover
+                  }}
                 >
-                  <service.icon className="w-8 h-8" />
+                  <motion.div
+                    animate={{
+                      rotate: [0, 360],
+                    }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  >
+                    <service.icon className="w-8 h-8" />
+                  </motion.div>
                 </motion.div>
 
                 {/* Content */}
@@ -90,11 +124,24 @@ const ServicesGrid: React.FC<ServicesGridProps> = ({
                   </motion.p>
                 </div>
 
-                {/* Interactive corner element */}
+                {/* Interactive corner element with pulse */}
                 <motion.div
                   className="absolute top-0 right-0 w-0 h-0 border-l-[40px] border-l-transparent border-t-[40px] border-t-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   whileHover={{ scale: 1.2 }}
-                  transition={{ duration: 0.3 }}
+                  animate={{
+                    borderTopColor: ["rgba(59, 130, 246, 0.2)", "rgba(59, 130, 246, 0.4)", "rgba(59, 130, 246, 0.2)"],
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                
+                {/* Floating dots animation */}
+                <motion.div
+                  className="absolute top-6 right-6 w-1 h-1 bg-primary/60 rounded-full opacity-0 group-hover:opacity-100"
+                  animate={{
+                    y: [0, -10, 0],
+                    opacity: [0.6, 1, 0.6],
+                  }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
                 />
               </CardContent>
             </Card>

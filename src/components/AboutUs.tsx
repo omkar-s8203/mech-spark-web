@@ -34,21 +34,21 @@ const AboutUs = () => {
       title: 'Advanced 3D Printing Systems',
       description: 'From desktop powerhouses like the DFT350 to custom-engineered solutions, our machines are built for speed, precision, and reliability.',
       gradient: 'from-blue-500 to-cyan-500',
-      bgGradient: 'from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20',
+      bgGradient: 'from-blue-50 to-cyan-50',
     },
     {
       icon: Target,
       title: 'Design & Product Development Services',
       description: 'We convert concepts into manufacturable, validated products through CAD design, reverse engineering, and CAE simulations.',
       gradient: 'from-purple-500 to-pink-500',
-      bgGradient: 'from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20',
+      bgGradient: 'from-purple-50 to-pink-50',
     },
     {
       icon: Star,
       title: 'Future-Focused Training Programs',
       description: 'Our industry-ready courses in CAD/CAM/CAE, Automotive Product Design, and Rapid Prototyping turn skills into careers.',
       gradient: 'from-orange-500 to-red-500',
-      bgGradient: 'from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20',
+      bgGradient: 'from-orange-50 to-red-50',
     },
   ];
 

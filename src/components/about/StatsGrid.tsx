@@ -55,10 +55,14 @@ const StatsGrid: React.FC<StatsGridProps> = ({
             transition={{ duration: 0.3 }}
             className="group cursor-pointer"
           >
-            <div className="relative text-center p-6 rounded-xl bg-card border hover:shadow-xl transition-all duration-500 overflow-hidden">
+            <div className="relative text-center p-6 rounded-xl bg-gradient-to-br from-white to-blue-50 border hover:shadow-xl transition-all duration-500 overflow-hidden">
               {/* Background effect on hover */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-purple-100/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                animate={{
+                  backgroundPosition: hoveredIndex === index ? ["0% 0%", "100% 100%", "0% 0%"] : "0% 0%",
+                }}
+                transition={{ duration: 2, repeat: hoveredIndex === index ? Infinity : 0 }}
               />
 
               {/* Animated Icon Container */}

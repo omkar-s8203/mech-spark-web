@@ -33,11 +33,16 @@ const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({ highlights })
 
   return (
     <div className="mb-20">
-      <Card 
-        className="relative overflow-hidden border-0 bg-gradient-to-br from-card/80 to-accent/30 shadow-xl"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
       >
+        <Card 
+          className="relative overflow-hidden border-0 bg-gradient-to-br from-blue-50 to-purple-50 shadow-xl"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
         <CardContent className="p-8 md:p-12">
           {/* Background decorative elements */}
           <div className="absolute inset-0 overflow-hidden">
@@ -157,7 +162,8 @@ const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({ highlights })
             </div>
           </div>
         </CardContent>
-      </Card>
+        </Card>
+      </motion.div>
     </div>
   );
 };
