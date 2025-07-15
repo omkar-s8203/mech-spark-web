@@ -45,14 +45,17 @@ const StatsGrid: React.FC<StatsGridProps> = ({
         {stats.map((stat, index) => (
           <motion.div
             key={index}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.6 }}
             whileHover={{ 
               scale: 1.1,
               y: -10,
+              rotateY: 10,
             }}
             whileTap={{ scale: 0.95 }}
             onHoverStart={() => setHoveredIndex(index)}
             onHoverEnd={() => setHoveredIndex(null)}
-            transition={{ duration: 0.3 }}
             className="group cursor-pointer"
           >
             <div className="relative text-center p-6 rounded-xl bg-gradient-to-br from-white to-blue-50 border hover:shadow-xl transition-all duration-500 overflow-hidden">

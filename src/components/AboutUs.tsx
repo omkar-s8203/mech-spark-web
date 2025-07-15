@@ -5,6 +5,7 @@ import InteractiveShowcase from './about/InteractiveShowcase';
 import ServicesGrid from './about/ServicesGrid';
 import StatsGrid from './about/StatsGrid';
 import CallToAction from './about/CallToAction';
+import FloatingParticles from './about/FloatingParticles';
 
 const AboutUs = () => {
   const highlights = [
@@ -71,8 +72,9 @@ const AboutUs = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 bg-background relative overflow-hidden">
+      <FloatingParticles />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Component */}
         <AboutHeader
           title="About Us"
