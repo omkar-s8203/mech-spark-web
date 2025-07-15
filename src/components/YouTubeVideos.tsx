@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -130,44 +129,19 @@ const YouTubeVideos = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <motion.div
-                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
+                      <Button 
+                        size="lg" 
+                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-red-600 hover:bg-red-700 text-white rounded-full"
+                        onClick={() => setSelectedVideo(video.id)}
                       >
-                        <Button 
-                          size="lg" 
-                          className="bg-red-600 hover:bg-red-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                          onClick={() => setSelectedVideo(video.id)}
-                        >
-                          <motion.div
-                            animate={{ 
-                              scale: [1, 1.2, 1],
-                              rotate: [0, 360]
-                            }}
-                            transition={{ 
-                              duration: 2, 
-                              repeat: Infinity,
-                              ease: "easeInOut"
-                            }}
-                          >
-                            <Play className="h-6 w-6" />
-                          </motion.div>
-                        </Button>
-                      </motion.div>
+                        <Play className="h-6 w-6" />
+                      </Button>
                     </DialogTrigger>
                     <DialogContent className="max-w-4xl">
                       <DialogHeader>
-                        <DialogTitle className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
-                          {video.title}
-                        </DialogTitle>
+                        <DialogTitle>{video.title}</DialogTitle>
                       </DialogHeader>
-                      <motion.div 
-                        className="aspect-video"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.3, duration: 0.5 }}
-                      >
+                      <div className="aspect-video">
                         <iframe
                           width="100%"
                           height="100%"
@@ -177,8 +151,8 @@ const YouTubeVideos = () => {
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
                           className="rounded-lg"
-                        />
-                      </motion.div>
+                        ></iframe>
+                      </div>
                     </DialogContent>
                   </Dialog>
                 </div>
