@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
-import { Play, Calendar, Eye, Clock, ExternalLink } from 'lucide-react';
+import { Play, Calendar, Eye, Clock, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Real video data from Decouvertes YouTube channel
 const channelVideos = [
@@ -54,6 +54,7 @@ const categories = ['All', 'Workshop', 'Motivation', 'Company'];
 const YouTubeVideos = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const filteredVideos = selectedCategory === 'All' 
     ? channelVideos 
@@ -74,6 +75,14 @@ const YouTubeVideos = () => {
       'Company': 'bg-purple-100 text-purple-800'
     };
     return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800';
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % filteredVideos.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + filteredVideos.length) % filteredVideos.length);
   };
 
   return (
@@ -116,8 +125,8 @@ const YouTubeVideos = () => {
           ))}
         </div>
 
-        {/* Videos Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Videos Grid - Desktop */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredVideos.map((video) => (
             <Card key={video.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="relative">
@@ -193,6 +202,128 @@ const YouTubeVideos = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Videos Carousel - Mobile */}
+        <div className="md:hidden relative">
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-300 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {filteredVideos.map((video) => (
+                <div key={video.id} className="w-full flex-shrink-0 px-2">
+                  <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div className="relative">
+                      <img 
+                        src={video.thumbnail} 
+                        alt={video.title}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button 
+                              size="lg" 
+                              className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-red-600 hover:bg-red-700 text-white rounded-full"
+                              onClick={() => setSelectedVideo(video.id)}
+                            >
+                              <Play className="h-6 w-6" />
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-4xl">
+                            <DialogHeader>
+                              <DialogTitle>{video.title}</DialogTitle>
+                            </DialogHeader>
+                            <div className="aspect-video">
+                              <iframe
+                                width="100%"
+                                height="100%"
+                                src={`https://www.youtube.com/embed/${video.id}`}
+                                title={video.title}
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                className="rounded-lg"
+                              ></iframe>
+                            </div>
+                          </DialogContent>
+                        </Dialog>
+                      </div>
+                      
+                      <Badge className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white">
+                        <Clock className="h-3 w-3 mr-1" />
+                        {video.duration}
+                      </Badge>
+                    </div>
+
+                    <CardHeader>
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge className={getCategoryColor(video.category)}>
+                          {video.category}
+                        </Badge>
+                      </div>
+                      <CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+                        {video.title}
+                      </CardTitle>
+                    </CardHeader>
+
+                    <CardContent>
+                      <CardDescription className="text-gray-600 mb-4 line-clamp-3">
+                        {video.description}
+                      </CardDescription>
+                      
+                      <div className="flex items-center justify-between text-sm text-gray-500">
+                        <div className="flex items-center">
+                          <Eye className="h-4 w-4 mr-1" />
+                          {video.views} views
+                        </div>
+                        <div className="flex items-center">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          {formatDate(video.publishedAt)}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation buttons */}
+          {filteredVideos.length > 1 && (
+            <>
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white z-10"
+                onClick={prevSlide}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white z-10"
+                onClick={nextSlide}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </>
+          )}
+
+          {/* Dots indicator */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {filteredVideos.map((_, index) => (
+              <button
+                key={index}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  index === currentSlide ? 'bg-orange-500' : 'bg-gray-300'
+                }`}
+                onClick={() => setCurrentSlide(index)}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Subscribe CTA */}
