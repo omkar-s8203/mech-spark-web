@@ -11,19 +11,19 @@ const AboutHeader: React.FC<AboutHeaderProps> = ({ title, subtitle, description 
   return (
     <div className="text-center mb-16">
       <motion.h2 
-        className="text-4xl md:text-5xl font-bold text-foreground mb-4"
+        className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-text-glow"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ 
           scale: 1.05,
-          textShadow: "0px 0px 8px rgba(59, 130, 246, 0.5)"
+          textShadow: "0px 0px 20px hsl(var(--primary) / 0.8)"
         }}
         transition={{ duration: 0.3 }}
       >
         {title}
       </motion.h2>
       <motion.h3 
-        className="text-2xl md:text-3xl font-semibold bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 bg-clip-text text-transparent mb-6"
+        className="text-2xl md:text-3xl font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent mb-6 animate-shimmer"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ 
@@ -40,7 +40,7 @@ const AboutHeader: React.FC<AboutHeaderProps> = ({ title, subtitle, description 
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ 
           scale: 1.01,
-          color: "#3b82f6"
+          color: "hsl(var(--primary))"
         }}
         transition={{ duration: 0.3, delay: 0.2 }}
       >

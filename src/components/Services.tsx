@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Settings, Code, Image, Users } from 'lucide-react';
 import ServicePopupContent from './ServicePopupContent';
+import AnimatedBackground from './ui/animated-background';
+import GlowCard from './ui/glow-card';
+import FloatingElements from './ui/floating-elements';
 
 const Services = () => {
   const services = [
@@ -287,8 +290,9 @@ Contact us today for course details and enrollment!`
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <AnimatedBackground variant="gradient" className="py-20 bg-gray-50">
+      <FloatingElements density="low" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Our Solutions are assured for industries
@@ -302,7 +306,7 @@ Contact us today for course details and enrollment!`
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
           {services.map((service, index) => (
-            <Card key={index} className={`group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br ${service.bgGradient} hover:scale-105`}>
+            <GlowCard key={index} className={`group bg-gradient-to-br ${service.bgGradient} animate-fade-in-up`} glowColor="primary" style={{animationDelay: `${index * 0.1}s`}}>
               <CardHeader>
                 <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${service.gradient} text-white mb-4 w-fit`}>
                   {service.icon}
@@ -334,7 +338,7 @@ Contact us today for course details and enrollment!`
                   </DialogContent>
                 </Dialog>
               </CardContent>
-            </Card>
+            </GlowCard>
           ))}
         </div>
 
@@ -380,7 +384,7 @@ Contact us today for course details and enrollment!`
           </Button>
         </div> */}
       </div>
-    </section>
+    </AnimatedBackground>
   );
 };
 

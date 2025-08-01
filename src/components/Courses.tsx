@@ -5,11 +5,14 @@ import PopularCourses from './courses/PopularCourses';
 import ThreeDPrinterSection from './courses/ThreeDPrinterSection';
 import SkillsSection from './courses/SkillsSection';
 import SocialMediaButtons from './courses/SocialMediaButtons';
+import AnimatedBackground from './ui/animated-background';
+import FloatingElements from './ui/floating-elements';
 
 const Courses = () => {
   return (
-    <section id="courses" className="py-20 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <AnimatedBackground variant="particles" className="py-20 bg-white relative">
+      <FloatingElements density="medium" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -36,7 +39,7 @@ const Courses = () => {
 
       {/* Social Media Buttons at Bottom */}
       <SocialMediaButtons />
-    </section>
+    </AnimatedBackground>
   );
 };
 

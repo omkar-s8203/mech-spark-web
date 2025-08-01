@@ -1,10 +1,13 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import AnimatedBackground from './ui/animated-background';
+import FloatingElements from './ui/floating-elements';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen flex items-center overflow-hidden">
+    <AnimatedBackground variant="mesh" className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen flex items-center overflow-hidden">
+      <FloatingElements density="high" className="opacity-40" />
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -118,7 +121,7 @@ const Hero = () => {
         <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-orange-400 rounded-full opacity-50 animate-pulse delay-500"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 z-10">
 
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
@@ -150,7 +153,7 @@ const Hero = () => {
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3 transform hover:scale-105 transition-all duration-200"
+                  className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-lg px-8 py-3 transform hover:scale-105 transition-all duration-200 animate-glow-pulse"
                 >
                   Get Started
                 </Button>
@@ -298,7 +301,7 @@ const Hero = () => {
         </div>
 
       </div>
-    </section>
+    </AnimatedBackground>
   );
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import GlowCard from '@/components/ui/glow-card';
 
 interface Service {
   icon: LucideIcon;
@@ -31,7 +32,7 @@ const ServicesGrid: React.FC<ServicesGridProps> = ({
             <motion.div
               whileHover={{ rotate: 360, scale: 1.1 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex p-3 rounded-lg bg-gradient-to-r from-yellow-500 to-orange-500 text-white cursor-pointer"
+              className="inline-flex p-3 rounded-lg bg-gradient-to-r from-accent to-primary text-white cursor-pointer animate-glow-pulse"
             >
               {React.createElement(titleIcon, { className: "w-8 h-8" })}
             </motion.div>
@@ -53,7 +54,7 @@ const ServicesGrid: React.FC<ServicesGridProps> = ({
             transition={{ duration: 0.3 }}
             className="group cursor-pointer"
           >
-            <Card className={`h-full border-0 bg-gradient-to-br ${service.bgGradient} hover:shadow-2xl transition-all duration-500 overflow-hidden relative`}>
+            <GlowCard className={`h-full bg-gradient-to-br ${service.bgGradient} overflow-hidden relative`} glowColor="primary">
               <CardContent className="p-8">
                 {/* Hover overlay with animated particles */}
                 <motion.div
@@ -144,7 +145,7 @@ const ServicesGrid: React.FC<ServicesGridProps> = ({
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
               </CardContent>
-            </Card>
+            </GlowCard>
           </motion.div>
         ))}
       </div>

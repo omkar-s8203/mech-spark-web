@@ -5,6 +5,8 @@ import InteractiveShowcase from './about/InteractiveShowcase';
 import ServicesGrid from './about/ServicesGrid';
 import StatsGrid from './about/StatsGrid';
 import CallToAction from './about/CallToAction';
+import AnimatedBackground from './ui/animated-background';
+import FloatingElements from './ui/floating-elements';
 
 const AboutUs = () => {
   const highlights = [
@@ -71,8 +73,9 @@ const AboutUs = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <AnimatedBackground variant="mesh" className="py-20 bg-background">
+      <FloatingElements density="medium" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Component */}
         <AboutHeader
           title="About Us"
@@ -105,7 +108,7 @@ const AboutUs = () => {
           onButtonClick={handleCallToAction}
         />
       </div>
-    </section>
+    </AnimatedBackground>
   );
 };
 
