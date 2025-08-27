@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Settings, Code, Image, Users } from 'lucide-react';
 import ServicePopupContent from './ServicePopupContent';
+import { useStaggeredAnimation } from '@/hooks/useScrollAnimation';
 
 const Services = () => {
   const services = [
@@ -286,15 +287,17 @@ Contact us today for course details and enrollment!`
     }
   ];
 
+  const { visibleItems, elementRef } = useStaggeredAnimation(services, 0.2);
+
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gray-50" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">
             Our Solutions are assured for industries
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            <span className="bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent font-semibold text-2xl">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up-fade" style={{ animationDelay: '0.2s' }}>
+            <span className="bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent font-semibold text-2xl animate-text-shimmer bg-[length:200%_100%]">
               Best A Grade Commercial Services
             </span>
           </p>
@@ -302,29 +305,41 @@ Contact us today for course details and enrollment!`
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
           {services.map((service, index) => (
-            <Card key={index} className={`group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br ${service.bgGradient} hover:scale-105`}>
+            <Card 
+              key={index} 
+              className={`group hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br ${service.bgGradient} hover:scale-105 hover:-translate-y-2 transform ${
+                visibleItems.has(index) 
+                  ? index % 2 === 0 
+                    ? 'animate-slide-in-left' 
+                    : 'animate-slide-in-right'
+                  : 'opacity-0'
+              }`}
+              style={{ 
+                animationDelay: visibleItems.has(index) ? `${index * 0.2}s` : '0s' 
+              }}
+            >
               <CardHeader>
-                <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${service.gradient} text-white mb-4 w-fit`}>
+                <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${service.gradient} text-white mb-4 w-fit group-hover:animate-bounce-in`}>
                   {service.icon}
                 </div>
-                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-gray-800">
+                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-gray-800 transition-colors duration-300">
                   {service.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-700 text-base leading-relaxed mb-6">
+                <CardDescription className="text-gray-700 text-base leading-relaxed mb-6 group-hover:text-gray-600 transition-colors duration-300">
                   {service.description}
                 </CardDescription>
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button className={`bg-gradient-to-r ${service.gradient} hover:opacity-90 transition-opacity`}>
+                    <Button className={`bg-gradient-to-r ${service.gradient} hover:opacity-90 transition-all duration-300 hover:scale-110 hover:rotate-1 transform`}>
                       Learn More
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                  <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto animate-zoom-in">
                     <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold text-gray-900 flex items-center">
-                        <div className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${service.gradient} text-white mr-3`}>
+                      <DialogTitle className="text-2xl font-bold text-gray-900 flex items-center animate-slide-in-left">
+                        <div className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${service.gradient} text-white mr-3 animate-rotate-in`}>
                           {service.icon}
                         </div>
                         {service.title}
@@ -339,46 +354,29 @@ Contact us today for course details and enrollment!`
         </div>
 
         {/* Call to Action */}
-
-<div className="text-center bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-12 text-white">
-  <h3 className="text-2xl font-bold mb-4">
-    Partner with us to turn your ideas into reality.
-  </h3>
-  <p className="text-lg text-gray-300 mb-8 max-w-4xl mx-auto">
-    Our comprehensive NPD and R&D services, combined with our dedication to creativity and technology, 
-    will drive the success of your mechanical and automobile product designs.
-  </p>
-  
-  <a
-    href="https://forms.office.com/r/BxULARiHpU"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Button 
-      size="lg" 
-      className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3"
-    >
-      Start Your Project
-    </Button>
-  </a>
-</div>
-
-
-        {/* <div className="text-center bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-12 text-white">
-          <h3 className="text-2xl font-bold mb-4">
+        <div className="text-center bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-12 text-white animate-zoom-in bg-[length:200%_200%] hover:animate-gradient-shift transition-all duration-500">
+          <h3 className="text-2xl font-bold mb-4 animate-slide-up-fade">
             Partner with us to turn your ideas into reality.
           </h3>
-          <p className="text-lg text-gray-300 mb-8 max-w-4xl mx-auto">
+          <p className="text-lg text-gray-300 mb-8 max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Our comprehensive NPD and R&D services, combined with our dedication to creativity and technology, 
             will drive the success of your mechanical and automobile product designs.
           </p>
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3"
+          
+          <a
+            href="https://forms.office.com/r/BxULARiHpU"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Start Your Project
-          </Button>
-        </div> */}
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3 animate-bounce-in hover:animate-wiggle transform transition-all duration-300"
+              style={{ animationDelay: '0.4s' }}
+            >
+              Start Your Project
+            </Button>
+          </a>
+        </div>
       </div>
     </section>
   );
