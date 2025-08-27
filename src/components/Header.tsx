@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,9 +73,8 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* Auth Buttons & Theme Toggle - Desktop */}
+          {/* Auth Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <ThemeToggle />
             <a href="https://decouvertes.trainercentralsite.in/#/login" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="hover:bg-orange-50 hover:border-orange-500">
                 Login
@@ -89,9 +87,8 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Mobile menu button & Theme Toggle */}
-          <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
+          {/* Mobile menu button */}
+          <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="bg-muted inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent"
