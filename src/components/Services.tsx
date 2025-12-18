@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Settings, Code, Image, Users } from 'lucide-react';
 import ServicePopupContent from './ServicePopupContent';
 import { useStaggeredAnimation } from '@/hooks/useScrollAnimation';
+import DroneLaunchPopup from './DroneLaunchPopup';
 
 const Services = () => {
   const services = [
@@ -291,6 +292,7 @@ Contact us today for course details and enrollment!`
 
   return (
     <section id="services" className="py-20 bg-gray-50" ref={elementRef}>
+      <DroneLaunchPopup />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in">

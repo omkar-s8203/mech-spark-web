@@ -1,12 +1,49 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { X } from 'lucide-react';
 
 const Hero = () => {
+  const [showMarquee, setShowMarquee] = useState(true);
+
   return (
-    <section id="home" className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative bg-[#0a0a0a] min-h-screen flex items-center overflow-hidden selection:bg-orange-500/30">
+      {/* Modern Ambient Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-orange-500/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute top-[20%] -right-[10%] w-[40%] h-[40%] bg-yellow-500/10 rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '10s', animationDelay: '1s' }} />
+        <div className="absolute -bottom-[10%] left-[20%] w-[30%] h-[30%] bg-blue-500/5 rounded-full blur-[80px]" />
+      </div>
+
+      {/* Marquee Notification Bar */}
+      {showMarquee && (
+        <div className="absolute top-0 left-0 right-0 z-40 bg-gradient-to-r from-orange-600/90 to-yellow-600/90 backdrop-blur-md border-b border-white/10 shadow-lg">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+            <div className="flex items-center flex-1 overflow-hidden">
+              <span className="bg-black/20 text-white text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full mr-4 whitespace-nowrap hidden sm:flex items-center gap-2 border border-white/10">
+                <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                LAUNCHING SOON
+              </span>
+              <div className="w-full text-white font-medium text-sm sm:text-base tracking-wide">
+                {/* @ts-ignore */}
+                <marquee behavior="scroll" direction="left" scrollamount="6">
+                  Proudly designed and manufactured in India, our innovative drone is built for special-purpose applications. Launching soon. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Proudly designed and manufactured in India, our innovative drone is built for special-purpose applications. Launching soon.
+                </marquee>
+              </div>
+            </div>
+            <button 
+              onClick={() => setShowMarquee(false)}
+              className="text-white/80 hover:text-white hover:bg-black/10 p-1 rounded-full transition-colors flex-shrink-0"
+              aria-label="Close notification"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
@@ -118,20 +155,20 @@ const Hero = () => {
         <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-orange-400 rounded-full opacity-50 animate-pulse delay-500"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 z-10">
 
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
               Ready to Bring{' '}
               <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
                 Bigger, Better
               </span>{' '}
               & Stronger Technology
             </h1>
-            <p className="mt-6 text-xl text-gray-300 max-w-2xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
               A leading company focused on accelerating the technology and growing exponentially.
               Innovate. Design. Build. Lead the Future.
             </p>
@@ -150,7 +187,7 @@ const Hero = () => {
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3 transform hover:scale-105 transition-all duration-200"
+                  className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white font-semibold text-lg px-8 py-6 rounded-xl shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_30px_rgba(249,115,22,0.5)] transform hover:scale-105 transition-all duration-300"
                 >
                   Get Started
                 </Button>
@@ -170,11 +207,12 @@ const Hero = () => {
 
           {/* Hero Image/Illustration */}
           <div className="relative animate-scale-in" style={{ animationDelay: '0.6s' }}>
-            <div className="bg-gradient-to-br from-orange-500/20 to-yellow-500/20 rounded-full w-96 h-96 mx-auto flex items-center justify-center animate-pulse" style={{ animationDuration: '4s' }}>
-              <div className="bg-gradient-to-br from-orange-500/30 to-yellow-500/30 rounded-full w-80 h-80 flex items-center justify-center">
-                <div className="bg-gradient-to-br from-orange-500/40 to-yellow-500/40 rounded-full w-64 h-64 flex items-center justify-center">
+            <div className="relative z-10 bg-gradient-to-br from-orange-500/10 to-yellow-500/10 backdrop-blur-3xl rounded-full w-[500px] h-[500px] mx-auto flex items-center justify-center border border-white/5 shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-yellow-500/20 rounded-full blur-3xl -z-10 animate-pulse" style={{ animationDuration: '4s' }}></div>
+              <div className="bg-gradient-to-br from-orange-500/20 to-yellow-500/20 rounded-full w-[400px] h-[400px] flex items-center justify-center backdrop-blur-sm border border-white/10">
+                <div className="bg-gradient-to-br from-orange-500/30 to-yellow-500/30 rounded-full w-[300px] h-[300px] flex items-center justify-center shadow-[inset_0_0_40px_rgba(255,255,255,0.1)] border border-white/10">
                   {/* Engineering Icon with rotation */}
-                  <svg className="w-32 h-32 text-white animate-pulse" fill="currentColor" viewBox="0 0 24 24" style={{ animationDuration: '3s' }}>
+                  <svg className="w-40 h-40 text-white/90 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 10 5.16-.26 9-4.45 9-10V7l-10-5z" />
                     <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" />
                   </svg>
@@ -183,7 +221,7 @@ const Hero = () => {
             </div>
 
             {/* Enhanced floating cards with better animations */}
-            <div className="absolute -top-4 -left-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 animate-float transform hover:scale-110 transition-transform cursor-pointer">
+            <div className="absolute top-10 left-0 bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 animate-float shadow-xl transform hover:scale-110 transition-transform cursor-pointer">
               <div className="text-orange-400 font-semibold flex items-center gap-2">
                 <svg className="w-4 h-4 animate-spin" style={{ animationDuration: '3s' }} viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
@@ -192,14 +230,14 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="absolute -bottom-4 -right-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 animate-float delay-1000 transform hover:scale-110 transition-transform cursor-pointer">
+            <div className="absolute bottom-10 right-0 bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 animate-float delay-1000 shadow-xl transform hover:scale-110 transition-transform cursor-pointer">
               <div className="text-yellow-400 font-semibold flex items-center gap-2">
                 <div className="w-3 h-8 bg-yellow-400 rounded animate-bounce" style={{ animationDuration: '1.5s' }}></div>
                 3D Printing
               </div>
             </div>
 
-            <div className="absolute top-1/2 -left-8 bg-white/10 backdrop-blur-sm rounded-lg p-4 animate-float delay-500 transform hover:scale-110 transition-transform cursor-pointer">
+            <div className="absolute top-1/2 -left-10 bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 animate-float delay-500 shadow-xl transform hover:scale-110 transition-transform cursor-pointer">
               <div className="text-orange-300 font-semibold flex items-center gap-2">
                 <div className="w-4 h-4 bg-orange-300 rounded-full animate-pulse"></div>
                 R&D
@@ -213,8 +251,8 @@ const Hero = () => {
           <div className="animate-fade-in">
             {/* Mobile Hero Icon */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-orange-500/20 to-yellow-500/20 rounded-full w-32 h-32 mx-auto flex items-center justify-center animate-pulse mb-6" style={{ animationDuration: '4s' }}>
-                <svg className="w-16 h-16 text-white animate-pulse" fill="currentColor" viewBox="0 0 24 24" style={{ animationDuration: '3s' }}>
+              <div className="bg-gradient-to-br from-orange-500/20 to-yellow-500/20 rounded-full w-48 h-48 mx-auto flex items-center justify-center animate-pulse mb-6 border border-white/10 shadow-[0_0_30px_rgba(249,115,22,0.2)]">
+                <svg className="w-24 h-24 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 10 5.16-.26 9-4.45 9-10V7l-10-5z" />
                   <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" />
                 </svg>
@@ -222,13 +260,13 @@ const Hero = () => {
 
               {/* Mobile Skills Tags with enhanced animations */}
               <div className="flex flex-wrap justify-center gap-2 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 py-1 text-orange-400 text-sm font-medium animate-scale-in">
+                <div className="bg-gray-800/80 border border-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-orange-400 text-sm font-medium animate-scale-in shadow-lg">
                   CAD Design
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 py-1 text-yellow-400 text-sm font-medium animate-scale-in delay-300">
+                <div className="bg-gray-800/80 border border-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-yellow-400 text-sm font-medium animate-scale-in delay-300 shadow-lg">
                   3D Printing
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 py-1 text-orange-300 text-sm font-medium animate-scale-in delay-500">
+                <div className="bg-gray-800/80 border border-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-orange-300 text-sm font-medium animate-scale-in delay-500 shadow-lg">
                   R&D
                 </div>
               </div>
@@ -242,7 +280,7 @@ const Hero = () => {
               & Stronger Technology
             </h1>
 
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8 animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
               A leading company focused on accelerating technology and growing exponentially.
               Innovate. Design. Build. Lead the Future.
             </p>
@@ -263,7 +301,7 @@ const Hero = () => {
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-lg px-8 py-3 transform hover:scale-105 transition-all duration-200"
+                  className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white font-semibold text-lg px-8 py-4 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
                   Get Started
                 </Button>
@@ -281,17 +319,17 @@ const Hero = () => {
 
             {/* Mobile Stats */}
             <div className="grid grid-cols-3 gap-4 mt-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <div className="bg-gray-800/50 border border-white/5 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-2xl font-bold text-orange-400">500+</div>
-                <div className="text-gray-300 text-sm">Projects</div>
+                <div className="text-gray-400 text-xs uppercase tracking-wider mt-1">Projects</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <div className="bg-gray-800/50 border border-white/5 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-2xl font-bold text-yellow-400">50+</div>
-                <div className="text-gray-300 text-sm">Clients</div>
+                <div className="text-gray-400 text-xs uppercase tracking-wider mt-1">Clients</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <div className="bg-gray-800/50 border border-white/5 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-2xl font-bold text-orange-300">5+</div>
-                <div className="text-gray-300 text-sm">Years</div>
+                <div className="text-gray-400 text-xs uppercase tracking-wider mt-1">Years</div>
               </div>
             </div>
           </div>
