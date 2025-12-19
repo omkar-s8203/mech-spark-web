@@ -45,8 +45,8 @@ const AboutUs = () => {
     },
     {
       icon: Star,
-      title: 'Future-Focused Training Programs',
-      description: 'Our industry-ready courses in CAD/CAM/CAE, Automotive Product Design, and Rapid Prototyping turn skills into careers.',
+      title: 'Drone Technology',
+      description: 'Proudly designed and manufactured in India, our innovative drones are built for special-purpose applications, delivering precision and reliability.',
       gradient: 'from-orange-500 to-red-500',
       bgGradient: 'from-orange-50 to-red-50',
     },

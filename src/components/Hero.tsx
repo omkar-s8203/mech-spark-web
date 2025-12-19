@@ -235,6 +235,13 @@ const Hero = () => {
                 R&D
               </div>
             </div>
+
+            <div className="absolute top-1/2 -right-8 bg-white/10 backdrop-blur-sm rounded-lg p-4 animate-float delay-700 transform hover:scale-110 transition-transform cursor-pointer">
+              <div className="text-red-400 font-semibold flex items-center gap-2">
+                <div className="w-4 h-4 bg-red-400 rounded-full animate-pulse"></div>
+                Drone Tech
+              </div>
+            </div>
           </div>
         </div>
 
@@ -260,6 +267,9 @@ const Hero = () => {
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 py-1 text-orange-300 text-sm font-medium animate-scale-in delay-500">
                   R&D
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 py-1 text-red-400 text-sm font-medium animate-scale-in delay-700">
+                  Drone Tech
                 </div>
               </div>
             </div>
