@@ -108,7 +108,15 @@ Looking forward to your response! 🚀`;
   return (
     <div className="mb-20">
       <div className="text-center mb-12 animate-fade-in">
-        <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Professional 3D Printing Equipment</h3>
+        <h3 className="text-3xl font-bold text-gray-900 mb-4">DFT Series Custom 3D Printers </h3>
+        <p className="text-lg text-gray-600">
+          Proudly Designed & Manufactured in India 
+          
+
+          </p>      
+    <p className="text-lg text-gray-600">
+          Made In India
+        </p>
         <p className="text-lg text-gray-600">
           State-of-the-art 3D printing technology for precision prototyping and manufacturing
         </p>
